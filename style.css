@@ -150,7 +150,7 @@ main {
 }
 
 .ProductsList > h2 {
-    text-align: center;
+    text-align: center;    
 }
 
 .line {
@@ -170,40 +170,16 @@ main {
 }
 
 .products {
-    padding: 30px 0;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 0;
 }
 
 .product {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.253);
-    display: inline-block;
+    width: 270px;
+    height: 350px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.212);
     border-radius: 10px;
-}
-
-.product > img {
-    width: 275px;
-    border-radius: 10px 10px 0 0;
-}
-
-.infoProduct {
-    margin: 20px;
-}
-
-.infoProduct > p:nth-of-type(2) {
-    font-weight: bold;
-    text-align: center;
-}
-
-.infoProduct button {
-    display: block;
-    margin: auto;
-    border: 0;
-    color: white;
-    background: var(--GREEN_SECONDARY);
-    font-weight: bold;
-    font-family: "Noto Sans", sans-serif;
-    font-size: .9em;
-    width: 100%;
-    padding: 11px 0;
-    border-radius: 5px;
-    margin-top: 15px;
 }
