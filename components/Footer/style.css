@@ -1,0 +1,33 @@
+footer {
+    background-color: var(--GREEN_QUINARY);
+    text-align: center;
+    color: white;
+    box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.329);
+    font-family: "Noto Sans", sans-serif;
+}
+
+footer > p {
+    padding: 10px;
+}
+
+footer > nav {
+    padding: 20px;
+}
+
+footer > nav > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px 15px;
+}
+
+footer > nav > a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 490px) {
+    footer > nav > a {
+        display: block;
+        padding: 5px;
+    }
+}

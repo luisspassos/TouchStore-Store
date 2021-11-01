@@ -1,15 +1,12 @@
 header {
-    position: fixed;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    z-index: 100;
     padding: 5px 17px 5px 25px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.219);
-    top: 0px;
-    left: 0px;
+
 }
 
 header > h1 > a {
@@ -55,38 +52,4 @@ header section i:hover {
 
 .iconCart {
     margin-right: 15px;
-}
-
-footer {
-    background-color: var(--GREEN_QUINARY);
-    text-align: center;
-    color: white;
-    box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.329);
-    font-family: "Noto Sans", sans-serif;
-}
-
-footer > p {
-    padding: 10px;
-}
-
-footer > nav {
-    padding: 20px;
-}
-
-footer > nav > a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0px 15px;
-}
-
-footer > nav > a:hover {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 490px) {
-    footer > nav > a {
-        display: block;
-        padding: 5px;
-    }
 }
