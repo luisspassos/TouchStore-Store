@@ -10,7 +10,9 @@ main {
 }
 
 .imageAndInfos > figure {
-   width: 650px;
+   max-width: 650px;
+   flex: 1;
+
 }
 
 .imageAndInfos > figure > img {
@@ -19,11 +21,18 @@ main {
     object-fit: cover;
 }
 
-.information {
+.information { 
+    flex: 1;
+    width: 100%;
     padding-left: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.btnsProduct {
+    width: 100%;
+    max-width: 500px;
 }
 
 .btnsProduct > button:nth-of-type(1) {
@@ -36,7 +45,8 @@ main {
     color: white;
     border: 0;
     background: var(--GREEN_TERTIARY);
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     padding: 15px 0;
     align-items: center;
     justify-content: center;
@@ -67,6 +77,7 @@ main {
     display: flex;
     align-items: center;
     font-size: 1.7em;
+    padding-bottom: 5px
 }
 
 .moreProducts:hover {
@@ -110,5 +121,24 @@ main {
         flex-direction: column;
         align-items: center;
         height: auto;
+    }
+
+    .information {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .moreProducts {
+        padding-top: 5px;
+    }
+
+    .btnsProduct {
+        padding-top: 10px;
+    }
+
+    .imageAndInfos > figure {
+        max-width: auto;
+        width: 100%;
+        flex: 1; 
     }
 }
