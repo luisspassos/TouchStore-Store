@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --FONT-HIGHLIGHT: "Lobster", cursive;
+    --FONT-DEFAULT: "Noto sans", sans-serif;
+    --GRAY: #EFEFEF;
+    --GREEN_PRIMARY: #30403B;
+    --GREEN_SECONDARY: #56BFA1;
+    --GREEN_TERTIARY: #8FBFB2;
+    --GREEN_QUATERNARY: #3E8A75;
+    --GREEN_QUINARY: #56736B;
+    --GREEN_TERTIARY_OPACITY: #8fbfb298;
+    --GREEN_PRIMARY_OPACITY: #30403b80;
+    --SHADOW-PRIMARY: 2px 2px 8px rgba(0, 0, 0, 0.212);
+}
+

@@ -1,86 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --FONT-HIGHLIGHT: "Lobster", cursive;
-    --FONT-DEFAULT: "Noto sans", sans-serif;
-    --GRAY: #EFEFEF;
-    --GREEN_PRIMARY: #30403B;
-    --GREEN_SECONDARY: #56BFA1;
-    --GREEN_TERTIARY: #8FBFB2;
-    --GREEN_QUATERNARY: #3E8A75;
-    --GREEN_QUINARY: #56736B;
-    --GREEN_TERTIARY_OPACITY: #8fbfb298;
-    --GREEN_PRIMARY_OPACITY: #30403b80;
-    --SHADOW-PRIMARY: 2px 2px 8px rgba(0, 0, 0, 0.212);
-}
-
-header {
-    position: fixed;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 100;
-    padding: 5px 17px 5px 25px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.219);
-    top: 0px;
-    left: 0px;
-}
-
-header > h1 > a {
-    text-decoration: none;
-    font-family: var(--FONT-HIGHLIGHT);
-    color: black;
-    font-weight: normal;
-}
-
-header section {
-    position: relative;
-    display: flex;
-
-}
-
-header section i {
-    font-size: 1.9em;
-    color: var(--GREEN_PRIMARY);
-    padding: 8px;
-    cursor: pointer;
-}
-
-header section i:hover {
-    background: var(--GRAY);
-    border-radius: 5px;
-}
-
-.cartQuantity {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--GREEN_SECONDARY);
-    color: white;
-    font: bold .9em var(--FONT-DEFAULT);
-    top: 3px;
-    pointer-events: none;
-    left: 25px;
-}
-
 main {
     padding: 76px 58px 0 58px;
     font-family: "Noto Sans", sans-serif;
     color: var(--GREEN_PRIMARY);
-}
-
-.iconCart {
-    margin-right: 15px;
 }
 
 .slider {
@@ -227,38 +148,7 @@ main {
     background: var(--GREEN_QUATERNARY);
 }
 
-footer {
-    background-color: var(--GREEN_QUINARY);
-    text-align: center;
-    color: white;
-    box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.329);
-    font-family: "Noto Sans", sans-serif;
-}
-
-footer > p {
-    padding: 10px;
-}
-
-footer > nav {
-    padding: 20px;
-}
-
-footer > nav > a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0px 15px;
-}
-
-footer > nav > a:hover {
-    text-decoration: underline;
-}
-
 @media screen and (max-width: 490px) {
-    footer > nav > a {
-        display: block;
-        padding: 5px;
-    }
 
     .slider {
         display: none;
