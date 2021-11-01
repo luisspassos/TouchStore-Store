@@ -70,12 +70,24 @@ main {
 }
 
 .moreProducts:hover {
-    color: var(--GREEN_QUATERNARY);
+   color: var(--GREEN_QUATERNARY);
 }
 
-.moreProducts > img {
-    width: 50px;
-    padding-right: 15px;
+.moreProducts > div {
+    width: 45px;
+    height: 45px;
+    background-image: url(../assets/open_door.svg);
+    background-size: cover;
+    margin-right: 15px;
+}
+
+.moreProducts:hover > div {
+    width: 45px;
+    height: 45px;
+    background-image: url(../assets/open_door_hover.svg);
+    background-size: cover;
+    margin-right: 15px;
+  
 }
 
 .description {
@@ -91,4 +103,12 @@ main {
 .descriptionWithLine > div {
     flex: 1;
     border-top: 1px solid var(--GREEN_PRIMARY_OPACITY);
+}
+
+@media screen and (max-width: 1070px) {
+    .imageAndInfos {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 }
