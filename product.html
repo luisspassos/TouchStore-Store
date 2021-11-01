@@ -5,44 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/bc7de74478.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/product.css">
     <link rel="stylesheet" href="styles/configs.css">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <title>Touch Store</title>
 </head>
 <body>
-    <iframe src="components/Header/index.html" width="100%" frameborder="0"></iframe>
+    <header>
+        <h1><a href="index.html">Touch Store</a></h1>
+        <section>
+            <div class="iconCart">
+                <div class="cartQuantity">2</div>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+                <i class="fas fa-search"></i>
+        </section>
+    </header>
     <main>
         <section class="imageAndInfos">
-            <img src="https://i.stack.imgur.com/y9DpT.jpg" alt="placeholder">
+            <figure>
+                <img src="https://i.stack.imgur.com/y9DpT.jpg" alt="placeholder">
+            </figure>
             <section class="information">
-                <p>
-                    <img src="assets/open_door.svg" alt="Icone de porta aberta">
-                    Ver mais produtos
-                </p>
-                <h1>-Panela Wok Linha Aroma 24cm</h1>
-                <h2>R$ 29,99</h2>
-                <button>
-                    ADICIONAR AO CARRINHO
-                    <img src="assets/plus_circle.svg" alt="Icone de mais">
-                </button>
-                <button>
-                    COMPRAR AGORA
-                    <img src="assets/shopping_bag.svg" alt="Icone de sacola de shopping">
-                </button>
+                <div class="informationHeader">
+                    <a class="moreProducts" href="#">
+                        <img src="assets/open_door.svg" alt="Icone de porta aberta">
+                        Ver mais produtos
+                    </a>
+                    <h1>Panela Wok Linha Aroma 24cm</h1>
+                    <h2>R$ 29,99</h2>
+                </div>
+                <div class="btnsProduct">
+                    <button class="buttonProduct">
+                        ADICIONAR AO CARRINHO
+                        <img src="assets/plus_circle.svg" alt="Icone de mais">
+                    </button>
+                    <button class="buttonProduct">
+                        COMPRAR AGORA
+                        <img src="assets/shopping_bag.svg" alt="Icone de sacola de shopping">
+                    </button>
+                </div>
             </section>
         </section>
         <section class="description">
-            <div class="paragrathWithLine">
+            <div class="descriptionWithLine">
                 <h2>DESCRIÇÃO</h2>
                 <div></div>
             </div>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita hic, asperiores aut obcaecati autem recusandae magnam quasi enim error, blanditiis, incidunt culpa dolorum et possimus at excepturi qui maiores nesciunt?</p>
         </section>
     </main>
-    <iframe src="components/Footer/index.html" style="min-height: 104px;" width="100%" frameborder="0"></iframe>
+    <footer>
+        <nav>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">CARRINHO</a>
+            <a href="#">INÍCIO</a>
+        </nav>
+        <p>Touch Store &copy; 2021</p>
+    </footer>
 </body>
 </html>
