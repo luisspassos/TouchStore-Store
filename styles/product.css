@@ -1,4 +1,26 @@
 main {
-    padding-top: 76px;
+    padding: 76px 20px 20px 20px;
+    font-family: "Noto Sans", sans-serif;
+    color: var(--GREEN_PRIMARY);
 }
 
+.imageAndInfos {
+    display: flex;
+}
+
+.information > button {
+    display: block;
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    background: var(--GREEN_TERTIARY);
+}
+
+.information > p:nth-child(1) {
+    color: var(--GREEN_SECONDARY);
+}
+
+.information > h1 {
+    font-weight: normal;
+}
