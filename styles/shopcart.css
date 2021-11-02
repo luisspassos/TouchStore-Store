@@ -88,6 +88,10 @@ main {
     font-size: 1.5em;
 }
 
+.priceAndQuantityResponsive {
+    display: none;
+}
+
 .btnsPayment > button {
     display: block;
     color: var(--GREEN_PRIMARY);
@@ -163,14 +167,7 @@ footer {
         gap: 10px;
     }
 
-    .quantityAndPrice {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex: 1;
-    }
-
-    .quantityAndPrice > .line {
+    .paymentInformation > .line {
         display: none;
     }
 
@@ -183,17 +180,29 @@ footer {
         gap: 10px;
     }
 
-    .btnsPayment {
-    }
-
     .btnsPayment > button {
         padding: 5px;
     }
 }
 
 @media screen and (max-width: 690px) {
-    .quantityAndPrice {
-        flex-direction: column;
-        align-items: flex-start;
+    .priceAndQuantityResponsive {
+        display: block;
     }
+
+    .paymentInformation > p:nth-of-type(1) {
+        display: none;
+    }
+
+    .paymentInformation > p:nth-of-type(2) {
+        display: none;
+    }
+
+    .moreProducts {
+        max-width: 82px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
 }
