@@ -21,6 +21,7 @@ main {
 
 .quantity {
     display: flex;
+    align-items: center;
     font-weight: bold;
     gap: 15px;
 }
@@ -29,10 +30,39 @@ main {
     padding-right: 25px;
 }
 
+.quantityIcons {
+    display: flex;
+}
+
+.quantityIcons > figure {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.quantityIcons > figure:hover {
+    border-radius: 50%;
+    background: var(--GREEN_TERTIARY_OPACITY);
+}
+
+.quantityIcons > figure > img {
+    width: 24px;
+}
+
 .line {
     width: 100%;
-    margin: 10px 0 30px;
     border-top: 1px solid var(--GREEN_PRIMARY_OPACITY);
+}
+
+.productLine {
+    margin: 10px 0 30px;
+}
+
+.paymentLine {
+    margin: 10px 0;
 }
 
 .product:nth-last-child(2) .line {
@@ -40,9 +70,66 @@ main {
 }
 
 .paymentInformation {
-    
+    position: fixed;
+    background: var(--GRAY);
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--SHADOW-PRIMARY);
+    font-size: 1.5em;
 }
 
-.icon {
-    width: 24px;
+.paymentInformation > button {
+    display: block;
+    color: var(--GREEN_PRIMARY);
+    border: 0;
+    background: var(--GREEN_SECONDARY);
+    width: 100%;
+    font-size: .9em;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
 }
+
+.paymentInformation > button:hover {
+    background: var(--GREEN_QUATERNARY);
+}
+
+.paymentInformation > button:nth-of-type(1) {
+    margin: 10px 0;
+}
+
+.paymentInformation > button:nth-of-type(2) {
+    margin-bottom: 10px;
+}
+
+.moreProducts {
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.moreProducts > div:nth-child(1) {
+    width: 30px;
+    height: 30px;
+    background-image: url(../assets/open_door_hover.svg);
+    background-size: cover;
+}
+
+.moreProducts:hover > div:nth-child(1) {
+    background-image: url(../assets/open_door_hover_dark.svg);
+}
+
+.moreProducts > span:nth-child(2) {
+    color: var(--GREEN_QUATERNARY);
+    font-size: .8em;
+}
+
+.moreProducts:hover > span:nth-child(2) {
+    color: var(--GREEN_PRIMARY);
+}
+
+
