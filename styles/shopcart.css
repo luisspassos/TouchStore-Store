@@ -2,9 +2,16 @@
     font-family: "Noto Sans", sans-serif;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     padding: 76px 20px 20px;
     color: var(--GREEN_PRIMARY);
+    flex: 1 0 auto;
 }
 
 .allInfos {
@@ -81,7 +88,7 @@ main {
     font-size: 1.5em;
 }
 
-.paymentInformation > button {
+.btnsPayment > button {
     display: block;
     color: var(--GREEN_PRIMARY);
     border: 0;
@@ -94,15 +101,15 @@ main {
     transition: .4s;
 }
 
-.paymentInformation > button:hover {
+.btnsPayment > button:hover {
     background: var(--GREEN_QUATERNARY);
 }
 
-.paymentInformation > button:nth-of-type(1) {
+.btnsPayment > button:nth-of-type(1) {
     margin: 10px 0;
 }
 
-.paymentInformation > button:nth-of-type(2) {
+.btnsPayment > button:nth-of-type(2) {
     margin-bottom: 10px;
 }
 
@@ -132,4 +139,61 @@ main {
     color: var(--GREEN_PRIMARY);
 }
 
+footer {
+    flex-shrink: 0;
+}
 
+@media screen and (max-width: 940px) {
+    .allInfos {
+        flex-direction: column;
+    }
+
+    .paymentInformation {
+        display: flex;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        bottom: auto;
+        right: auto;
+        top: 56px;
+        left: 0;
+        box-shadow: none;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .quantityAndPrice {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .quantityAndPrice > .line {
+        display: none;
+    }
+
+    main {
+        padding: 282px 20px 20px;
+    }
+
+    .moreProducts {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .btnsPayment {
+    }
+
+    .btnsPayment > button {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .quantityAndPrice {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
