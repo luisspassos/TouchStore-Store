@@ -1,0 +1,48 @@
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+main {
+    padding: 76px 20px 20px;
+    color: var(--GREEN_PRIMARY);
+}
+
+.allInfos {
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    gap: 20px;
+}
+
+.allInfos > img:nth-child(1) {
+    width: 250px;
+    height: 120px;
+}
+
+.quantity {
+    display: flex;
+    font-weight: bold;
+    gap: 15px;
+}
+
+.quantity > p:nth-child(1) {
+    padding-right: 25px;
+}
+
+.line {
+    width: 100%;
+    margin: 10px 0 30px;
+    border-top: 1px solid var(--GREEN_PRIMARY_OPACITY);
+}
+
+.product:nth-last-child(2) .line {
+    display: none;
+}
+
+.paymentInformation {
+    
+}
+
+.icon {
+    width: 24px;
+}
