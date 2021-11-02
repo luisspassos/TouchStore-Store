@@ -33,6 +33,12 @@ main {
     gap: 15px;
 }
 
+.quantityContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .quantity > p:nth-child(1) {
     padding-right: 25px;
 }
@@ -204,5 +210,23 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    
+    .quantity {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+
+    .quantityContainer {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .paymentInformation {
+        font-size: 1.1em;
+    }
+
+    .moreProducts {
+        max-width: 60px;
+    }
 }
