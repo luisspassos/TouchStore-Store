@@ -163,7 +163,14 @@ footer {
         gap: 10px;
     }
 
-    .paymentInformation > .line {
+    .quantityAndPrice {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .quantityAndPrice > .line {
         display: none;
     }
 
@@ -174,13 +181,19 @@ footer {
     .moreProducts {
         flex-direction: column-reverse;
         gap: 10px;
-    }''
+    }
+
+    .btnsPayment {
+    }
 
     .btnsPayment > button {
         padding: 5px;
     }
 }
 
-@media screen and (min-width: 690px) {
-    
+@media screen and (max-width: 690px) {
+    .quantityAndPrice {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
