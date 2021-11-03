@@ -38,7 +38,7 @@ productsList.innerHTML = products.map(product => {
     const price = product.price.split(".").join(",");
 
     return(
-        `<a href="product.html" class="product">
+        `<article class="product">
             <img src="${product.img}" alt="${product.alt}">
             <section class="productInfos">
                 <p>${product.title}</p>
@@ -47,6 +47,6 @@ productsList.innerHTML = products.map(product => {
                     <button>VER PRODUTO</button>
                 </div>
             </section>
-        </a>`
+        </article>`
     )
 }).join("")

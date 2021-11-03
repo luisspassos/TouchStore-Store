@@ -16,7 +16,7 @@ main {
 
 .allInfos {
     display: flex;
-    font-size: 1.5em;
+    font-size: 1.4em;
     align-items: center;
     gap: 20px;
 }

@@ -124,6 +124,10 @@ main {
     height: 100%;
 }
 
+.productInfos > p {
+    font-size: .9em;
+}
+
 .buttonAndPrice > p {
     text-align: center;
     font-weight: bold;
