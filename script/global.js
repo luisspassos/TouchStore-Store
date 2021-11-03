@@ -1,16 +1,13 @@
 const search = document.querySelector(".fa-search");
 const searchContainer = document.querySelector(".searchContainer");
+const searchContainerInput = document.querySelector(".searchContainer input");
 
-search.addEventListener("click", ()=> {
-    searchContainer.style.display = "flex";
+search.addEventListener("click", () => {
+  searchContainer.style.display = "flex";
+  searchContainerInput.focus();
 })
 
-document.addEventListener('click', (event) => {
-  const withinBoundaries = event.composedPath().includes(search)
-
-  if(!withinBoundaries) {
-    searchContainer.style.display = "none";
-  }
+searchContainerInput.addEventListener("blur", ()=> {
+  searchContainer.style.display = "none";
 })
-
 

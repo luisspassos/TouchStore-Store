@@ -50,3 +50,4 @@ productsList.innerHTML = products.map(product => {
         </article>`
     )
 }).join("")
+
