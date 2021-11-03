@@ -1,3 +1,5 @@
+import { products } from "./procucts.js"
+
 const btnsSlider = document.querySelectorAll(".btnsSlider button");
 const imgsSlider = document.querySelector(".imgsSlider");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;

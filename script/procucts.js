@@ -1,4 +1,4 @@
-const products = [
+export const products = [
     {
         title: 'iPhone 11 Apple (128GB) (PRODUCT)RED tela 6,1" Câmera 12MP iOS',
         price: 4096.80,
@@ -46,4 +46,3 @@ const products = [
     }
 ]
 
-export { products }
