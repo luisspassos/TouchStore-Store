@@ -4,7 +4,9 @@ const btnsSlider = document.querySelectorAll(".btnsSlider button");
 const imgsSlider = document.querySelector(".imgsSlider");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
 const indexes = document.querySelectorAll(".indexes div");
+const productsList = document.querySelector(".products");
 
+// slider
 let index = 0;
 
 function slider() {
@@ -28,3 +30,23 @@ function slider() {
 btnsSlider.forEach(button => {
     button.addEventListener("click", slider)
 })
+
+//products
+
+productsList.innerHTML = products.map(product => {
+
+    const price = product.price.split(".").join(",");
+
+    return(
+        `<a href="product.html" class="product">
+            <img src="${product.img}" alt="${product.alt}">
+            <section class="productInfos">
+                <p>${product.title}</p>
+                <div class="buttonAndPrice">
+                    <p>R$ ${price}</p>
+                    <button>VER PRODUTO</button>
+                </div>
+            </section>
+        </a>`
+    )
+}).join("")

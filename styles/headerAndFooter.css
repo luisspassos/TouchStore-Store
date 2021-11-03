@@ -56,6 +56,19 @@ header section i:hover {
     margin-right: 15px;
 }
 
+.searchContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 53px;
+    right: -17px;
+}
+
+.searchContainer > img {
+    position: absolute;
+    pointer-events: none;
+}
+
 footer {
     background-color: var(--GREEN_QUINARY);
     text-align: center;
