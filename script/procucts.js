@@ -56,11 +56,11 @@ export const products = [
         alt: "Caneta Esferográfica"
     },
     {
-        title: "Papel Manteiga para embrulho 30x35cm 1204 500 unidades",
-        price: "119.00",
-        img: "https://images-americanas.b2w.io/produtos/3484218021/imagens/papel-manteiga-para-embrulho-30x35cm-1204-500-unidades/3484218021_1_xlarge.jpg",
-        id: "Papel_Manteiga",
-        alt: "Papel Manteiga"
+        title: "Fone de Ouvido Philips TAH1205 Bluetooth com Microfone",
+        price: "129.99",
+        img: "https://images-americanas.b2w.io/produtos/01/00/img/2933926/7/2933926745_1SZ.jpg",
+        id: "Fone_de_Ouvido",
+        alt: "Fone de ouvido"
     }
 ]
 
