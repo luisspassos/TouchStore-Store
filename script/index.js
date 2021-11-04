@@ -53,10 +53,9 @@ productsList.innerHTML = products.map(product => {
 
 const allProducts = document.querySelectorAll(".product");
 
-allProducts.forEach(product => {
-    product.addEventListener("click", () => {
-        alert("Ola")
+products.forEach((product, i) => {
+    allProducts[i].addEventListener("click", () => {
+        location = `product.html?product=${product.id}`
     })
 })
-
 

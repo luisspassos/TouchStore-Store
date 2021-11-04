@@ -17,10 +17,6 @@ header {
     left: 0px;
 }
 
-header > h1 {
-    flex: 0 0;
-}
-
 header > h1 > a {
     text-decoration: none;
     font-family: var(--FONT-HIGHLIGHT);
@@ -51,13 +47,13 @@ header > h1 > a {
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
     background: var(--GREEN_SECONDARY);
     color: white;
-    font: bold .9em var(--FONT-DEFAULT);
-    top: 3px;
+    font: bold 1em var(--FONT-DEFAULT);
+    top: 1px;
     pointer-events: none;
     left: 33px;
 }
@@ -94,10 +90,6 @@ header > h1 > a {
     border-radius: 0 10px 10px 0 ;
 }
 
-.searchContainer > button:hover {
-    background: var(--GREEN_TERTIARY);
-}
-
 footer {
     background-color: var(--GREEN_QUINARY);
     text-align: center;
@@ -123,6 +115,13 @@ footer > nav > a {
 
 footer > nav > a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 780px) {
+    header > h1 {
+        width: 72.39px;
+        margin-right: 8px;
+    }
 }
 
 @media screen and (max-width: 500px) {
