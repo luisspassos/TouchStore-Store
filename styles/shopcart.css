@@ -178,7 +178,7 @@ footer {
     }
 
     main {
-        padding: 282px 20px 20px;
+        padding: 230px 20px 20px;
     }
 
     .moreProducts {
@@ -188,6 +188,16 @@ footer {
 
     .btnsPayment > button {
         padding: 5px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .paymentInformation {
+        top: 96px;
+    }
+
+    main {
+        padding: 264px 20px 20px;
     }
 }
 
@@ -207,6 +217,27 @@ footer {
     .moreProducts {
         max-width: 82px;
     }
+
+    main {
+        padding: 276px 20px 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .paymentInformation {
+        top: 113px;
+    }
+
+    main {
+        padding: 293px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 489px) {
+    main {
+        padding: 339px 20px 20px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -217,7 +248,7 @@ footer {
     }
 
     .quantityContainer {
-        align-items: flex-start;
+        margin-top: -5px;
     }
 }
 

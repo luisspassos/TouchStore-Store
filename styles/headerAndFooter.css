@@ -17,6 +17,10 @@ header {
     left: 0px;
 }
 
+header > h1 {
+    flex: 0 0;
+}
+
 header > h1 > a {
     text-decoration: none;
     font-family: var(--FONT-HIGHLIGHT);
@@ -125,7 +129,7 @@ footer > nav > a:hover {
     .phoneHeader {
         display: flex;
         flex-direction: column;
-        gap: 0;
+        gap: 5px;
     }
 
     .phoneHeader > section {
