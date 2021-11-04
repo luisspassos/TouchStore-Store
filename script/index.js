@@ -51,3 +51,12 @@ productsList.innerHTML = products.map(product => {
     )
 }).join("")
 
+const allProducts = document.querySelectorAll(".product");
+
+allProducts.forEach(product => {
+    product.addEventListener("click", () => {
+        alert("Ola")
+    })
+})
+
+
