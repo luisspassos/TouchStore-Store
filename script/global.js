@@ -5,7 +5,7 @@ const searchContainerInput = document.querySelector(".searchContainer input");
 let searchIsVisible = false;
 
 
-// ver mais afundo events do document
+// MUDAR TODA A BUSCA
 document.addEventListener("click", (e) => {
   if(!e.target.className.includes("fa-search")) {
     searchIsVisible = false;
