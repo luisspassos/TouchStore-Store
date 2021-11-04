@@ -65,11 +65,11 @@ header > h1 > a {
 }
 
 .searchContainer > input {
+    width: 100%;
+    max-width: 500px;
     font-family: "Noto Sans", sans-serif;
     font-size: 1.1em;
     height: 40px;
-    width: 100%;
-    max-width: 500px;
     padding-left: 10px;
     border: 0;
     outline: 3px solid var(--GREEN_TERTIARY_OPACITY);
@@ -142,6 +142,10 @@ footer > nav > a:hover {
         text-decoration: none;
         font: normal 1.2em var(--FONT-HIGHLIGHT);
         color: black;
+    }
+
+    .searchContainer {
+        width: 100%;
     }
 
 }
