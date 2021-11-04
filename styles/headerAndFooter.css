@@ -1,3 +1,7 @@
+.phoneHeader {
+    display: none;
+}
+
 header {
     position: fixed;
     background-color: white;
@@ -118,7 +122,28 @@ footer > nav > a:hover {
 }
 
 @media screen and (max-width: 500px) {
-    
+    .phoneHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .phoneHeader > section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .phoneHeader > section > h1 > a {
+        text-decoration: none;
+        font: normal 1.2em var(--FONT-HIGHLIGHT);
+        color: black;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 490px) {
