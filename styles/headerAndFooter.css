@@ -145,9 +145,6 @@ footer > nav > a:hover {
         color: black;
     }
 
-    .searchContainer {
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 490px) {
