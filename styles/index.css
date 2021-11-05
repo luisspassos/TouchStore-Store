@@ -1,6 +1,6 @@
 main {
     padding: 76px 58px 0 58px;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--FONT-DEFAULT);
     color: var(--GREEN_PRIMARY);
 }
 
@@ -19,6 +19,7 @@ main {
 }
 
 .imgsSlider > img {
+    cursor: pointer;
     width: 100%;
     min-height: 200px;
     object-fit: cover;
@@ -145,7 +146,7 @@ main {
     border: 0;
     background: var(--GREEN_SECONDARY);
     color: white;
-    font: bold 1em "Noto Sans", sans-serif;
+    font: bold 1em var(--FONT-DEFAULT);
     padding: 10px 0;
     border-radius: 5px;
     margin-top: 5px;

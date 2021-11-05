@@ -68,10 +68,10 @@ products.forEach((product, i) => {
 
 // Slider images
 
-const messages = ["ola", "banana"];
+const imagesPath = [products[8].id, products[2].id]
 
-messages.forEach((message, i) => {
+imagesPath.forEach((path, i) => {
     clickableImages[i].addEventListener("click", () => {
-        alert(message)
+        location = `product.html?product=${path}`
     })
 })

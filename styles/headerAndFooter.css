@@ -9,7 +9,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    z-index: 100;
+    z-index: 5;
     gap: 10px;
     padding: 5px 17px 5px 25px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.219);
@@ -67,7 +67,7 @@ header > h1 > a {
 .searchContainer > input {
     width: 100%;
     max-width: 500px;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--FONT-DEFAULT);
     font-size: 1.1em;
     height: 40px;
     padding-left: 10px;
@@ -95,7 +95,7 @@ footer {
     text-align: center;
     color: white;
     box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.329);
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--FONT-DEFAULT);
 }
 
 footer > p {
