@@ -57,11 +57,9 @@ modalCancelBtn.addEventListener("click", () => {
     modalBackground.style.display = "none"
 })
 
-modalAddButton.addEventListener("click", () => {
-    let quantity = 2;
-    quantity++;
-    setInterval(() => {
-        modalCartQuantity.textContent = quantity;
-    }, 500)
-})
+let modalCartQuantityNumber = 1;
 
+modalAddButton.addEventListener("click", () => {
+    modalCartQuantityNumber++;
+    modalCartQuantity.textContent = modalCartQuantityNumber;
+})
