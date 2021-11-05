@@ -4,8 +4,14 @@ const imgProduct = document.querySelector(".imageAndInfos > figure > img");
 const titleProduct = document.querySelector(".informationHeader > h1");
 const priceProduct = document.querySelector(".informationHeader > h2");
 const buyBtn = document.querySelector("#buyBtn");
-const modal = document.querySelector(".modalBackground");
-const btnModal = document.querySelector(".modal button");
+const modalBackground = document.querySelector(".modalBackground");
+const buyModal = document.querySelector(".buyModal");
+const btnBuyModal = document.querySelector(".buyModal button");
+const addBtn = document.querySelector("#addBtn");
+const addModal = document.querySelector(".addModal");
+const modalCancelBtn = document.querySelector("#modalCancelBtn");
+const modalCartQuantity = document.querySelector(".quantityAddModal > span")
+const modalAddButton = document.querySelector("#modalAddButton");
 
 const urlProduct = location.search.split("=")[1];
 
@@ -22,15 +28,40 @@ priceProduct.textContent += priceFormatted;
 // buy button
 
 buyBtn.addEventListener("click", () => {
-    modal.style.display = "block"
+    buyModal.style.display = "block";
+    modalBackground.style.display = "block";
 })
 
-btnModal.addEventListener("click", () => {
-    modal.style.display = "none"
+btnBuyModal.addEventListener("click", () => {
+    buyModal.style.display = "none";
+    modalBackground.style.display = "none";
 })
 
 document.addEventListener("keydown", (e) => {
     if(e.key === "Escape") {
-        modal.style.display = "none"
+        modalBackground.style.display = "none"
+        buyModal.style.display = "none";
+        addModal.style.display = "none";
     }
 })
+
+// add button and add modal
+
+addBtn.addEventListener("click", () => {
+    addModal.style.display = "flex";
+    modalBackground.style.display = "block"
+})
+
+modalCancelBtn.addEventListener("click", () => {
+    addModal.style.display = "none";
+    modalBackground.style.display = "none"
+})
+
+modalAddButton.addEventListener("click", () => {
+    let quantity = 2;
+    quantity++;
+    setInterval(() => {
+        modalCartQuantity.textContent = quantity;
+    }, 500)
+})
+

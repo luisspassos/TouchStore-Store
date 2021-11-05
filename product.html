@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/bc7de74478.js" crossorigin="anonymous"></script>
     <script type="module" src="script/productPage.js" defer></script>
+    <script src="script/header.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -24,7 +25,7 @@
             <button title="Busca"><i class="fas fa-search"></i></button>
         </div>
         <a href="shopcart.html" title="Carrinho" class="iconCart">
-            <div class="cartQuantity">2</div>
+            <div class="cartQuantity">0</div>
             <i class="fas fa-shopping-cart"></i>
         </a>
     </header>
@@ -32,7 +33,7 @@
         <section>
             <h1><a href="index.html">Touch Store</a></h1>
             <a href="shopcart.html" title="Carrinho" class="iconCart">
-                <div class="cartQuantity">2</div>
+                <div class="cartQuantity">0</div>
                 <i class="fas fa-shopping-cart"></i>
             </a>
         </section>
@@ -56,7 +57,7 @@
                     <h2>R$ </h2>
                 </div>
                 <div class="btnsProduct">
-                    <button class="buttonProduct">
+                    <button id="addBtn" class="buttonProduct">
                         ADICIONAR AO CARRINHO
                         <img src="assets/plus_circle.svg" alt="Icone de mais">
                     </button>
@@ -78,7 +79,19 @@
     </main>
     <aside class="modalBackground">
         <div class="flexModal">
-            <div class="modal">
+            <div class="addModal">
+                <h2>Deseja adicionar quantas unidades deste produto?</h2>
+                <div class="quantityAddModal">
+                    <button id="modalAddButton"><i class="fas fa-plus"></i></button>
+                    <span>1</span>
+                    <button><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="btnsAddModal">
+                    <button id="modalCancelBtn">Cancelar</button>
+                    <button>Adicionar</button>
+                </div>
+            </div>
+            <div class="buyModal">
                 <h2>Compra finalizada com sucesso!</h2>
                 <button>OK</button>
             </div>
