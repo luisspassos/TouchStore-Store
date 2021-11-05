@@ -11,6 +11,9 @@ main {
 
 .imgsSlider {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
     transform: translateX(0);
     transition: .5s ease-in-out;
 }
@@ -21,22 +24,10 @@ main {
     object-fit: cover;
 }
 
-.sliderComponents {
+.imgsSlider > button {
+    transform: translateX(0);
+    transition: .5s ease-in-out;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    top: 0;
-    padding: 20px;
-}
-
-.btnsSlider {
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-}
-
-.btnsSlider > button {
     border: 0;
     background: var(--GREEN_TERTIARY_OPACITY);
     color: var(--GREEN_PRIMARY);
@@ -47,25 +38,38 @@ main {
     cursor: pointer;
 }
 
-.btnsSlider > button:hover {
+.imgsSlider > button:hover {
     background: var(--GREEN_TERTIARY);
 }
 
-.indexes {
-    align-items: flex-end;
-    justify-content: center;
-    gap: 10px;
+.imgsSlider > button:nth-of-type(1) {
+    left: 20px;
 }
 
-.indexes > div {
+.imgsSlider > button:nth-of-type(2) {
+    right: 20px;
+}
+
+.imgsSlider > div {
+    transform: translateX(0);
+    transition: .5s ease-in-out;
+    align-self: flex-end;
+    justify-self: end;
+    position: absolute;
     width: 20px;
     height: 20px;
     background: var(--GREEN_TERTIARY_OPACITY);
     border-radius: 50%;
+    bottom: 20px;
 }
 
-.indexes > div:nth-child(1) {
+.imgsSlider > div:nth-of-type(1) {
+    left: 48%;
     background: var(--GREEN_SECONDARY);
+}
+
+.imgsSlider > div:nth-of-type(2) {
+    right: 48%;
 }
 
 .ProductsList {

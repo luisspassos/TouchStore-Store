@@ -1,9 +1,10 @@
 import { products } from "./procucts.js"
 
-const btnsSlider = document.querySelectorAll(".btnsSlider button");
+const btnsSlider = document.querySelectorAll(".imgsSlider button");
 const imgsSlider = document.querySelector(".imgsSlider");
+const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
-const indexes = document.querySelectorAll(".indexes div");
+const indexes = document.querySelectorAll(".imgsSlider div");
 const productsList = document.querySelector(".products");
 
 // slider
@@ -17,6 +18,12 @@ function slider() {
     }
 
     imgsSlider.style.transform = `translateX(${-index * 100}%)`
+    indexes.forEach(i => {
+        i.style.transform = `translateX(${index * 1233}px)`
+    })
+    btnsSlider.forEach(btn => {
+        btn.style.transform = `translateX(${index * 1233}px)`
+    })
     
     indexes.forEach((_, i)=> {
         if(index === i) {
@@ -24,7 +31,7 @@ function slider() {
         } else {
             indexes[i].style.background = "#8fbfb298"
         }
-    })
+    }) 
 }
 
 btnsSlider.forEach(button => {
@@ -59,3 +66,12 @@ products.forEach((product, i) => {
     })
 })
 
+// Slider images
+
+const messages = ["ola", "banana"];
+
+messages.forEach((message, i) => {
+    clickableImages[i].addEventListener("click", () => {
+        alert(message)
+    })
+})
