@@ -19,7 +19,7 @@ const addButtonToCart = document.querySelector("#addButtonToCart");
 const urlProduct = location.search.split("=")[1];
 
 const {img, title, alt, price, id} = products.find(product => product.id === urlProduct);
-const priceFormatted = price.split(".").join(",");
+const priceFormatted = Number(price).toLocaleString("pt-br");
 
 // view product
 
@@ -88,7 +88,6 @@ addButtonToCart.addEventListener("click", () => {
     if(productQuantity) {
         productQuantity[1] += quantity
         addToStorage()
-        console.log(cartProducts)
         return;
     }
 
@@ -98,7 +97,6 @@ addButtonToCart.addEventListener("click", () => {
     cartQuantityDOM.style.display = "flex";
     cartQuantityDOM.textContent = cartProducts.length;
 
-    console.log(cartProducts)
 })
 
 // ESC modals

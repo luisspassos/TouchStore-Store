@@ -24,6 +24,7 @@ main {
 .allInfos > img:nth-child(1) {
     width: 250px;
     height: 120px;
+    object-fit: cover;
 }
 
 .quantity {
@@ -78,7 +79,7 @@ main {
     margin: 10px 0;
 }
 
-.product:nth-last-child(2) .line {
+.product:nth-last-child(1) .line {
     display: none;
 }
 

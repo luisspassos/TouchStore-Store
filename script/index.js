@@ -43,7 +43,7 @@ btnsSlider.forEach(button => {
 
 productsList.innerHTML = products.map(product => {
 
-    const price = product.price.split(".").join(",");
+    const price = Number(product.price).toLocaleString("pt-br")
 
     return(
         `<article class="product">
