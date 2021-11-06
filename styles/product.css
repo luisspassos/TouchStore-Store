@@ -164,7 +164,7 @@ main {
     font: bold 1.3em var(--FONT-DEFAULT);
     color: white;
     border: 0;
-    background: var(--GREEN_TERTIARY);
+    background: var(--GREEN_SECONDARY);
     width: 100%;
     width: 500px;
     padding: 15px 0;

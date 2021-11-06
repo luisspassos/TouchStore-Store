@@ -1,4 +1,5 @@
 import { products } from "./procucts.js"
+import { cartProducts, cartQuantityDOM } from "./header.js";
 
 const btnsSlider = document.querySelectorAll(".imgsSlider button");
 const imgsSlider = document.querySelector(".imgsSlider");
