@@ -5,7 +5,10 @@ const productList = document.querySelector(".productList");
 const productLength = document.querySelector("#productLength");
 const paymentPriceDOM = document.querySelector("#paymentPrice");
 const cleanCartBtn = document.querySelector("#cleanCart");
-const checkoutButton = document.querySelector("#checkout")
+const checkoutButton = document.querySelector("#checkout");
+const modalBackground = document.querySelector(".modalBackground");
+const buyModal = document.querySelector(".buyModal");
+const btnBuyModal = document.querySelector(".buyModal button");
 
 const foundProducts = [];
 cartProducts.forEach(cartProduct => {
@@ -88,9 +91,14 @@ function resetCart() {
     productListComponent()
 }
 
+function closeBuyModal() {
+    buyModal.style.display = "none";
+    modalBackground.style.display = "none";
+}
+
 productLength.innerHTML = `${foundProducts.length}<br> produtos`;
 
-if(paymentPrice === "0") {
+if (paymentPrice === "0") {
     paymentPriceDOM.textContent = "R$ 00,00"
 } else {
     paymentPriceDOM.textContent += paymentPrice
@@ -98,8 +106,24 @@ if(paymentPrice === "0") {
 
 cleanCartBtn.addEventListener('click', resetCart)
 
-checkoutButton.addEventListener("click", ()=> {
-    alert("aaaaaa")
+checkoutButton.addEventListener("click", () => {
+    if(cartProducts.length !== 0) {
+        resetCart()
+        buyModal.style.display = "block";
+        modalBackground.style.display = "block";
+    } else {
+        alert("O carrinho está vazio!")
+    }
+})
+
+btnBuyModal.addEventListener("click", () => {
+    closeBuyModal()
+})
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeBuyModal()
+    }
 })
 
 
