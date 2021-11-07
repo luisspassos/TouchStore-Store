@@ -7,7 +7,7 @@
     <title>Touch Store</title>
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/bc7de74478.js" crossorigin="anonymous"></script>
-    <script src="script/header.js" defer></script>
+    <script type="module" src="script/header.js" defer></script>
     <script type="module" src="script/shopcart.js" defer ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +76,10 @@
         <div class="flexModal">
             <div class="buyModal">
                 <h2>Compra finalizada com sucesso!</h2>
+                <button>OK</button>
+            </div>
+            <div class="buyModal" id="emptyCart">
+                <h2>O carrinho está vazio!</h2>
                 <button>OK</button>
             </div>
         </div>

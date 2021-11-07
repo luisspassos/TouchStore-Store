@@ -1,5 +1,5 @@
 import { products } from "./procucts.js"
-import { cartProducts, cartQuantityDOM } from "./header.js";
+import { } from "./header.js";
 
 const btnsSlider = document.querySelectorAll(".imgsSlider button");
 const imgsSlider = document.querySelector(".imgsSlider");
@@ -25,14 +25,14 @@ function slider() {
     btnsSlider.forEach(btn => {
         btn.style.transform = `translateX(${index * 1233}px)`
     })
-    
-    indexes.forEach((_, i)=> {
-        if(index === i) {
+
+    indexes.forEach((_, i) => {
+        if (index === i) {
             indexes[i].style.background = "#56BFA1"
         } else {
             indexes[i].style.background = "#8fbfb298"
         }
-    }) 
+    })
 }
 
 btnsSlider.forEach(button => {
@@ -41,31 +41,44 @@ btnsSlider.forEach(button => {
 
 //products
 
-productsList.innerHTML = products.map(product => {
+const searchUrl = location.search.split("=")[1];
 
-    const price = Number(product.price).toLocaleString("pt-br")
+function productListComponent(list) {
+    productsList.innerHTML = list.map(product => {
 
-    return(
-        `<article class="product">
-            <img src="${product.img}" alt="${product.alt}">
-            <section class="productInfos">
-                <p>${product.title}</p>
-                <div class="buttonAndPrice">
-                    <p>R$ ${price}</p>
-                    <button>VER PRODUTO</button>
-                </div>
-            </section>
-        </article>`
-    )
-}).join("")
+        const price = Number(product.price).toLocaleString("pt-br")
 
-const allProducts = document.querySelectorAll(".product");
+        return (
+            `<article class="product">
+                <img src="${product.img}" alt="${product.alt}">
+                <section class="productInfos">
+                    <p>${product.title}</p>
+                    <div class="buttonAndPrice">
+                        <p>R$ ${price}</p>
+                        <button>VER PRODUTO</button>
+                    </div>
+                </section>
+            </article>`
+        )
+    }).join("")
 
-products.forEach((product, i) => {
-    allProducts[i].addEventListener("click", () => {
-        location = `product.html?product=${product.id}`
+    const allProducts = document.querySelectorAll(".product");
+
+    list.forEach((product, i) => {
+        allProducts[i].addEventListener("click", () => {
+            location = `product.html?product=${product.id}`
+        })
     })
-})
+}
+
+if (searchUrl) {
+    const wantedProducts = products.filter(product => product.title.toLowerCase().includes(searchUrl.toLowerCase()))
+
+    productListComponent(wantedProducts)
+
+} else {
+    productListComponent(products)
+}
 
 // Slider images
 

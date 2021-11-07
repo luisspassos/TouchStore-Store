@@ -9,6 +9,8 @@ const checkoutButton = document.querySelector("#checkout");
 const modalBackground = document.querySelector(".modalBackground");
 const buyModal = document.querySelector(".buyModal");
 const btnBuyModal = document.querySelector(".buyModal button");
+const emptyCartModal = document.querySelector("#emptyCart");
+const emptyModalBtn = document.querySelector("#emptyCart button");
 
 const foundProducts = [];
 cartProducts.forEach(cartProduct => {
@@ -112,11 +114,16 @@ checkoutButton.addEventListener("click", () => {
         buyModal.style.display = "block";
         modalBackground.style.display = "block";
     } else {
-        alert("O carrinho está vazio!")
+        modalBackground.style.display = "block";
+        emptyCartModal.style.display = "block";
     }
 })
 
 btnBuyModal.addEventListener("click", () => {
+    closeBuyModal()
+})
+
+emptyModalBtn.addEventListener("click", () => {
     closeBuyModal()
 })
 
@@ -125,5 +132,3 @@ document.addEventListener("keydown", (e) => {
         closeBuyModal()
     }
 })
-
-
