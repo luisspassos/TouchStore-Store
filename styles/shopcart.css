@@ -109,11 +109,10 @@ main {
     padding: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    transition: .4s;
 }
 
 .btnsPayment > button:hover {
-    background: var(--GREEN_QUATERNARY);
+    filter: brightness(0.9);
 }
 
 .btnsPayment > button:nth-of-type(1) {

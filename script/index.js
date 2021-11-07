@@ -1,7 +1,7 @@
 import { products } from "./procucts.js"
 import { } from "./header.js";
 
-const btnsSlider = document.querySelectorAll(".imgsSlider button");
+const btnsSlider = document.querySelectorAll(".imgsSlider article");
 const imgsSlider = document.querySelector(".imgsSlider");
 const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
@@ -23,7 +23,7 @@ function slider() {
         i.style.transform = `translateX(${index * 1233}px)`
     })
     btnsSlider.forEach(btn => {
-        btn.style.transform = `translateX(${index * 1233}px)`
+        btn.style.transform = `translateX(${index * 100}%)`
     })
 
     indexes.forEach((_, i) => {

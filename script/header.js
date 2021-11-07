@@ -1,11 +1,13 @@
 import { products } from "./procucts.js"
 // shopCart
-const cartQuantityDOM = document.querySelector(".cartQuantity");
+const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
 
 let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
 
 if(cartProducts.length === 0) {
-    cartQuantityDOM.style.display = "none";
+    cartQuantityDOM.forEach(cartQuatity => {
+        cartQuatity.style.display = "none"
+    })
 }
 
 cartQuantityDOM.textContent = cartProducts.length
