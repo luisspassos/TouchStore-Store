@@ -1,8 +1,6 @@
 const cartQuantityDOM = document.querySelector(".cartQuantity");
 
-const cartProducts = JSON.parse(localStorage.getItem("test")) || [];
-
-console.log(cartProducts)
+let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
 
 if(cartProducts.length === 0) {
     cartQuantityDOM.style.display = "none";

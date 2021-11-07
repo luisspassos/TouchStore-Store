@@ -1,10 +1,11 @@
-import { cartProducts } from "./header.js";
+import { cartProducts, cartQuantityDOM } from "./header.js";
 import { products } from "./procucts.js";
 
 const productList = document.querySelector(".productList");
 const productLength = document.querySelector("#productLength");
 const paymentPriceDOM = document.querySelector("#paymentPrice");
-const clearCartBtn = document.querySelector("#clearCart");
+const cleanCartBtn = document.querySelector("#cleanCart");
+const checkoutButton = document.querySelector("#checkout")
 
 const foundProducts = [];
 cartProducts.forEach(cartProduct => {
@@ -53,16 +54,16 @@ const substractBtn = document.querySelectorAll(".substractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 
-function addToStorage() {
+function addToStorage(i) {
     productQuantity[i].textContent = foundProducts[i][1];
     cartProducts[i][1] = foundProducts[i][1];
     localStorage.setItem("test", JSON.stringify(cartProducts))
 }
 
-addBtn.forEach((btn, i)=> {
+addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         foundProducts[i][1]++;
-        addToStorage()
+        addToStorage(i)
     })
 })
 
@@ -70,14 +71,35 @@ substractBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         if (foundProducts[i][1] > 1) {
             foundProducts[i][1]--;
-            addToStorage()
+            addToStorage(i)
         }
     })
 })
 
 // payment infos
 
+function resetCart() {
+    cartProducts.length = 0;
+    productLength.innerHTML = `0<br> produtos`;
+    paymentPriceDOM.textContent = "R$ 00,00"
+    cartQuantityDOM.style.display = "none"
+    foundProducts.length = 0;
+    localStorage.setItem("test", JSON.stringify(cartProducts))
+    productListComponent()
+}
+
 productLength.innerHTML = `${foundProducts.length}<br> produtos`;
-paymentPriceDOM.textContent += paymentPrice
+
+if(paymentPrice === "0") {
+    paymentPriceDOM.textContent = "R$ 00,00"
+} else {
+    paymentPriceDOM.textContent += paymentPrice
+}
+
+cleanCartBtn.addEventListener('click', resetCart)
+
+checkoutButton.addEventListener("click", ()=> {
+    alert("aaaaaa")
+})
 
 
