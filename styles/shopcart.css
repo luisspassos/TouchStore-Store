@@ -1,5 +1,5 @@
 * {
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--FONT-DEFAULT);
 }
 
 body {
@@ -24,6 +24,7 @@ main {
 .allInfos > img:nth-child(1) {
     width: 250px;
     height: 120px;
+    object-fit: cover;
 }
 
 .quantity {
@@ -78,7 +79,7 @@ main {
     margin: 10px 0;
 }
 
-.product:nth-last-child(2) .line {
+.product:nth-last-child(1) .line {
     display: none;
 }
 
@@ -108,11 +109,10 @@ main {
     padding: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    transition: .4s;
 }
 
 .btnsPayment > button:hover {
-    background: var(--GREEN_QUATERNARY);
+    filter: brightness(0.9);
 }
 
 .btnsPayment > button:nth-of-type(1) {

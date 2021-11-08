@@ -1,60 +1,71 @@
 main {
-    padding: 76px 58px 0 58px;
-    font-family: "Noto Sans", sans-serif;
+    padding: 87px 58px 0 58px;
+    font-family: var(--FONT-DEFAULT);
     color: var(--GREEN_PRIMARY);
 }
 
 .slider {
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .imgsSlider {
-    display: flex;
     transform: translateX(0);
     transition: .5s ease-in-out;
+    display: flex;
 }
 
 .imgsSlider > img {
+    cursor: pointer;
     width: 100%;
     min-height: 200px;
     object-fit: cover;
 }
 
-.sliderComponents {
+.slider > button {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    top: 0;
-    padding: 20px;
-}
-
-.btnsSlider {
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-}
-
-.btnsSlider > button {
     border: 0;
-    background: var(--GREEN_TERTIARY_OPACITY);
     color: var(--GREEN_PRIMARY);
     font-size: 2.2em;
+    background: var(--GREEN_TERTIARY_OPACITY);
     width: 60px;
     height: 60px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.btnsSlider > button:hover {
+.slider > button:hover {
     background: var(--GREEN_TERTIARY);
 }
 
+.slider > button:nth-of-type(1) {
+    left: 20px;
+}
+
+.slider > button:nth-of-type(2) {
+    right: 20px;
+}
+
+.index {
+    width: 20px;
+    height: 20px;
+    background: var(--GREEN_TERTIARY_OPACITY);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+}
+
 .indexes {
-    align-items: flex-end;
-    justify-content: center;
-    gap: 10px;
+    display: flex;
+    align-self: flex-end;
+    gap: 5px;
+    transition: .5s ease-in-out;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .indexes > div {
@@ -64,7 +75,7 @@ main {
     border-radius: 50%;
 }
 
-.indexes > div:nth-child(1) {
+.indexes > div:nth-of-type(1) {
     background: var(--GREEN_SECONDARY);
 }
 
@@ -141,7 +152,7 @@ main {
     border: 0;
     background: var(--GREEN_SECONDARY);
     color: white;
-    font: bold 1em "Noto Sans", sans-serif;
+    font: bold 1em var(--FONT-DEFAULT);
     padding: 10px 0;
     border-radius: 5px;
     margin-top: 5px;
@@ -152,9 +163,15 @@ main {
     background: var(--GREEN_QUATERNARY);
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 795px) {
     main {
-        padding: 122px 58px 0 58px;
+        padding: 118px 58px 0 58px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        padding: 138px 58px 0 58px;
     }
 }
 

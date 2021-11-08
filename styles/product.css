@@ -1,6 +1,6 @@
 main {
     padding: 86px 20px 20px 20px;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--FONT-DEFAULT);
     color: var(--GREEN_PRIMARY);
 }
 
@@ -40,10 +40,10 @@ main {
 
 .buttonProduct {
     display: flex;
-    font: bold 1.3em "Noto Sans", sans-serif;
+    font: bold 1.3em var(--FONT-DEFAULT);
     color: white;
     border: 0;
-    background: var(--GREEN_TERTIARY);
+    background: var(--GREEN_SECONDARY);
     width: 100%;
     width: 500px;
     padding: 15px 0;
