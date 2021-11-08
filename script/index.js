@@ -5,7 +5,7 @@ const imgsSlider = document.querySelector(".imgsSlider");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
 const indexes = document.querySelectorAll(".indexes div");
 const productsList = document.querySelector(".products");
-
+// VER CLICK NAS IMAGENS, POSITION ABSOLUTE ATRAPALHANDO, preventDefault...
 // slider
 let index = 0;
 
@@ -31,7 +31,7 @@ btnsSlider.forEach(button => {
     button.addEventListener("click", slider)
 })
 
-//products
+//Products List
 
 productsList.innerHTML = products.map(product => {
 
@@ -50,6 +50,8 @@ productsList.innerHTML = products.map(product => {
         </article>`
     )
 }).join("")
+
+//Path Products
 
 const allProducts = document.querySelectorAll(".product");
 
