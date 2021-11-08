@@ -153,9 +153,15 @@ main {
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 812px) {
     main {
-        padding: 122px 20px 20px 20px;
+        padding: 118px 20px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        padding: 138px 20px 20px 20px;
     }
 }
 

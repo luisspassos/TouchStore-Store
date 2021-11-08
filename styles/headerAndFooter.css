@@ -118,14 +118,14 @@ footer > nav > a:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 795px) {
+@media screen and (max-width: 812px) {
     header > h1 {
         width: 79.63px;
         margin-right: 8px;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .phoneHeader {
         display: flex;
         flex-direction: column;
@@ -141,7 +141,7 @@ footer > nav > a:hover {
 
     .phoneHeader > section > h1 > a {
         text-decoration: none;
-        font: normal 1.2em var(--FONT-HIGHLIGHT);
+        font: normal 1.3em var(--FONT-HIGHLIGHT);
         color: black;
     }
 

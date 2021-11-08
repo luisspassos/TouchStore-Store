@@ -16,21 +16,28 @@ export { cartProducts, cartQuantityDOM }
 
 // search
 
-const searchInput = document.querySelector(".searchContainer input");
-const searchButton = document.querySelector(".searchContainer button");
+const searchInput = document.querySelectorAll(".searchContainer input");
+const searchButton = document.querySelectorAll(".searchContainer button");
 
 function search() {
-    if(searchInput.value !== "") {
-        location = `index.html?search=${searchInput.value}#products`
-    }
-}
-
-searchButton.addEventListener("click", search)
-
-searchInput.addEventListener("focus", ()=> {
-    searchInput.addEventListener("keydown", (e)=> {
-        if(e.key === "Enter") {
-            search()
+    searchInput.forEach(input => {
+        if(input.value !== "") {
+            location = `index.html?search=${input.value}#products`
         }
     })
+}
+
+searchButton.forEach(btn => {
+    btn.addEventListener("click", search)
 })
+
+searchInput.forEach(input => {
+    input.addEventListener("focus", ()=> {
+        input.addEventListener("keydown", (e)=> {
+            if(e.key === "Enter") {
+                search()
+            }
+        })
+    })
+})
+
