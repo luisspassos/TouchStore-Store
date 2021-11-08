@@ -1,13 +1,12 @@
 import { products } from "./procucts.js"
 import { } from "./header.js";
 
-const btnsSlider = document.querySelectorAll(".imgsSlider article");
+const btnsSlider = document.querySelectorAll(".slider button");
 const imgsSlider = document.querySelector(".imgsSlider");
 const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
-const indexesWrapper = document.querySelector(".indexes");
-const indexes = document.querySelectorAll(".indexes div");
 const productsList = document.querySelector(".products");
+const indexes = document.querySelectorAll(".indexes > div");
 
 // slider
 let index = 0;

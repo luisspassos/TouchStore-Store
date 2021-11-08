@@ -21,6 +21,7 @@ header > h1 > a {
     text-decoration: none;
     font: normal 1.1em var(--FONT-HIGHLIGHT);
     color: black;
+    padding-right: 8px;
 }
 
 .iconCart {
@@ -117,9 +118,9 @@ footer > nav > a:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 795px) {
     header > h1 {
-        width: 72.39px;
+        width: 79.63px;
         margin-right: 8px;
     }
 }
