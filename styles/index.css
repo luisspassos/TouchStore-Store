@@ -54,26 +54,26 @@ main {
     background: var(--GREEN_TERTIARY);
 }
 
-.imgsSlider > div {
-    transform: translateX(0);
-    transition: .5s ease-in-out;
+.indexes {
+    display: flex;
     align-self: flex-end;
-    justify-self: end;
+    gap: 5px;
+    transition: .5s ease-in-out;
     position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.indexes > div {
     width: 20px;
     height: 20px;
     background: var(--GREEN_TERTIARY_OPACITY);
     border-radius: 50%;
-    bottom: 20px;
 }
 
-.imgsSlider > div:nth-of-type(1) {
+.indexes > div:nth-of-type(1) {
     background: var(--GREEN_SECONDARY);
-    right: 50%;
-}
-
-.imgsSlider > div:nth-of-type(2) {
-    left: 50%;
 }
 
 .ProductsList {

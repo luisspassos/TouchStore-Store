@@ -5,7 +5,8 @@ const btnsSlider = document.querySelectorAll(".imgsSlider article");
 const imgsSlider = document.querySelector(".imgsSlider");
 const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
-const indexes = document.querySelectorAll(".imgsSlider div");
+const indexesWrapper = document.querySelector(".indexes");
+const indexes = document.querySelectorAll(".indexes div");
 const productsList = document.querySelector(".products");
 
 // slider
@@ -19,12 +20,6 @@ function slider() {
     }
 
     imgsSlider.style.transform = `translateX(${-index * 100}%)`
-    indexes.forEach(i => {
-        i.style.transform = `translateX(${index * 1233}px)`
-    })
-    btnsSlider.forEach(btn => {
-        btn.style.transform = `translateX(${index * 100}%)`
-    })
 
     indexes.forEach((_, i) => {
         if (index === i) {
