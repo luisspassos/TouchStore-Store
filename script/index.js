@@ -7,6 +7,8 @@ const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
 const productsList = document.querySelector(".products");
 const indexes = document.querySelectorAll(".indexes > div");
+const notFoundSection = document.querySelector(".notFound");
+const notFoundText = document.querySelector(".notFound p");
 
 // slider
 let index = 0;
@@ -66,9 +68,16 @@ function productListComponent(list) {
 }
 
 if (searchUrl) {
+
     const wantedProducts = products.filter(product => product.title.toLowerCase().includes(searchUrl.toLowerCase()))
 
-    productListComponent(wantedProducts)
+    if(wantedProducts == 0) {
+        notFoundText.innerHTML += `Nenhum resultado<br> para "<em>${searchUrl}</em>"`
+        notFoundSection.style.display = "flex"
+        productListComponent(products)
+    } else {
+        productListComponent(wantedProducts)
+    }
 
 } else {
     productListComponent(products)

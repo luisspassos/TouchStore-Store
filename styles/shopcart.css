@@ -191,7 +191,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 812px) {
     .paymentInformation {
         top: 96px;
     }
@@ -224,7 +224,7 @@ footer {
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
     .paymentInformation {
         top: 113px;
     }
