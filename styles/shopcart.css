@@ -25,6 +25,10 @@ main {
     gap: 20px;
 }
 
+.infos > p {
+    width: 700px;
+}
+
 .allInfos > img:nth-child(1) {
     width: 250px;
     height: 120px;
@@ -156,9 +160,19 @@ footer {
     flex-shrink: 0;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1265px) {
     .allInfos {
         flex-direction: column;
+    }
+
+    .allInfos > img:nth-child(1) {
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+    }
+
+    .infos > p {
+        width: 100%;
     }
 
     .paymentInformation {
@@ -168,7 +182,7 @@ footer {
         width: 100%;
         bottom: auto;
         right: auto;
-        top: 56px;
+        top: 67px;
         left: 0;
         box-shadow: none;
         align-items: center;
@@ -181,7 +195,7 @@ footer {
     }
 
     main {
-        padding: 230px 20px 20px;
+        padding: 235px 20px 20px;
     }
 
     .moreProducts {
@@ -197,11 +211,11 @@ footer {
 @media screen and (max-width: 812px) { 
 
     .paymentInformation {
-        top: 96px;
+        top: 98px;
     }
 
     main {
-        padding: 264px 20px 20px;
+        padding: 266px 20px 20px;
     }
 }
 
@@ -223,28 +237,28 @@ footer {
     }
 
     main {
-        padding: 276px 20px 20px;
+        padding: 278px 20px 20px;
     }
 
 }
 
 @media screen and (max-width: 550px) {
     .paymentInformation {
-        top: 113px;
+        top: 118px;
     }
 
     main {
-        padding: 293px 20px 20px;
+        padding: 298px 20px 20px;
     }
 }
 
-@media screen and (max-width: 489px) {
+@media screen and (max-width: 486px) {
     main {
-        padding: 339px 20px 20px;
+        padding: 331px 20px 20px;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 477px) {
     .quantity {
         flex-direction: column;
         align-items: flex-start;
@@ -254,9 +268,17 @@ footer {
     .quantityContainer {
         margin-top: -5px;
     }
+
+    main {
+        padding: 344px 20px 20px;
+    }
 }
 
 @media screen and (max-width: 360px) {
+    main {
+        padding: 316px 20px 20px;
+    }
+
     .paymentInformation {
         font-size: 1.1em;
     }

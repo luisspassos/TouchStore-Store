@@ -4,9 +4,9 @@ const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
 
 let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
 
-if(cartProducts.length === 0) {
+if(cartProducts.length !== 0) {
     cartQuantityDOM.forEach(cartQuatity => {
-        cartQuatity.style.display = "none"
+        cartQuatity.style.display = "flex"
     })
 }
 
