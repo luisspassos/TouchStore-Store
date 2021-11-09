@@ -125,27 +125,26 @@ main {
 
 .moreProducts {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
 }
 
-.moreProducts > div:nth-child(1) {
+.moreProducts > svg {
     width: 30px;
     height: 30px;
-    background-image: url(../assets/open_door_hover.svg);
-    background-size: cover;
 }
 
-.moreProducts:hover > div:nth-child(1) {
-    background-image: url(../assets/open_door_hover_dark.svg);
+.moreProducts:hover > svg {
+    fill: var(--GREEN_PRIMARY);
 }
 
-.moreProducts > span:nth-child(2) {
+.moreProducts > span {
     color: var(--GREEN_QUATERNARY);
     font-size: .8em;
 }
 
-.moreProducts:hover > span:nth-child(2) {
+.moreProducts:hover > span {
     color: var(--GREEN_PRIMARY);
 }
 
@@ -170,7 +169,7 @@ footer {
         box-shadow: none;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
+        gap: 15px;
     }
 
     .paymentInformation > .line {

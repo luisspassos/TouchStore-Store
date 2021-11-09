@@ -83,21 +83,14 @@ main {
    color: var(--GREEN_QUATERNARY);
 }
 
-.moreProducts > div {
+.moreProducts > svg {
     width: 45px;
     height: 45px;
-    background-image: url(../assets/open_door.svg);
-    background-size: cover;
     margin-right: 15px;
 }
 
-.moreProducts:hover > div {
-    width: 45px;
-    height: 45px;
-    background-image: url(../assets/open_door_hover.svg);
-    background-size: cover;
-    margin-right: 15px;
-  
+.moreProducts:hover > svg {
+    fill: var(--GREEN_QUATERNARY);
 }
 
 .description {

@@ -3,7 +3,7 @@ import { products } from "./procucts.js";
 
 const productList = document.querySelector(".productList");
 const productLength = document.querySelector("#productLength");
-const paymentPriceDOM = document.querySelector("#paymentPrice");
+const paymentPriceDOM = document.querySelectorAll("#paymentPrice");
 const cleanCartBtn = document.querySelector("#cleanCart");
 const checkoutButton = document.querySelector("#checkout");
 const modalBackground = document.querySelector(".modalBackground");
@@ -86,7 +86,9 @@ substractBtn.forEach((btn, i) => {
 function resetCart() {
     cartProducts.length = 0;
     productLength.innerHTML = `0<br> produtos`;
-    paymentPriceDOM.textContent = "R$ 00,00"
+    paymentPriceDOM.forEach(payment => {
+        payment.textContent = "R$ 00,00"
+    })
     cartQuantityDOM.style.display = "none"
     foundProducts.length = 0;
     localStorage.setItem("test", JSON.stringify(cartProducts))
@@ -101,9 +103,13 @@ function closeBuyModal() {
 productLength.innerHTML = `${foundProducts.length}<br> produtos`;
 
 if (paymentPrice === "0") {
-    paymentPriceDOM.textContent = "R$ 00,00"
+    paymentPriceDOM.forEach(payment => {
+        payment.textContent = "R$ 00,00"
+    })
 } else {
-    paymentPriceDOM.textContent += paymentPrice
+    paymentPriceDOM.forEach(payment => {
+        payment.textContent += paymentPrice
+    })
 }
 
 cleanCartBtn.addEventListener('click', resetCart)
