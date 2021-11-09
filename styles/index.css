@@ -116,6 +116,7 @@ main {
 .notFound > p {
     color: var(--GREEN_QUATERNARY);
     font-size: 2em;
+    text-align: center;
 }
 
 .notFound > p > em {

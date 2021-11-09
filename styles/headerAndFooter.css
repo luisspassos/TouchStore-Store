@@ -71,7 +71,7 @@ header > h1 > a {
     font-family: var(--FONT-DEFAULT);
     font-size: 1.1em;
     height: 40px;
-    padding-left: 10px;
+    padding: 0 10px;
     border: 0;
     outline: 3px solid var(--GREEN_TERTIARY_OPACITY);
     border-radius: 5px 0 0 5px;

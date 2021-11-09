@@ -72,7 +72,7 @@ if (searchUrl) {
     const wantedProducts = products.filter(product => product.title.toLowerCase().includes(searchUrl.toLowerCase()))
 
     if(wantedProducts == 0) {
-        notFoundText.innerHTML += `Nenhum resultado<br> para "<em>${searchUrl}</em>"`
+        notFoundText.innerHTML += `Nenhum resultado<br> para "<em>${decodeURI(searchUrl)}</em>"`
         notFoundSection.style.display = "flex"
         productListComponent(products)
     } else {
