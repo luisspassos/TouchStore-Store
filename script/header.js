@@ -18,6 +18,7 @@ export { cartProducts, cartQuantityDOM }
 
 const searchInput = document.querySelectorAll(".searchContainer input");
 const searchButton = document.querySelectorAll(".searchContainer button");
+const searchForm = document.querySelector(".searchContainer");
 
 function search() {
     searchInput.forEach(input => {
@@ -26,6 +27,10 @@ function search() {
         }
     })
 }
+
+searchForm.addEventListener("submit", (e)=> {
+    e.preventDefault()
+})
 
 searchButton.forEach(btn => {
     btn.addEventListener("click", search)

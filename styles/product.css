@@ -61,6 +61,15 @@ main {
     width: 30px;
 }
 
+.informationHeader {
+    position: static;
+    display: block;
+    width: unset;
+    z-index: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
 .informationHeader > h1 {
     font-size: 1.7em;
     font-weight: normal;
@@ -147,6 +156,9 @@ main {
 }
 
 @media screen and (max-width: 812px) {
+    .informationHeader > h1 {
+        width: auto;
+    }
     main {
         padding: 118px 20px 20px 20px;
     }
