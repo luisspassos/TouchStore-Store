@@ -17,7 +17,7 @@ cartProducts.forEach(cartProduct => {
     foundProducts.push([products.find(product => product.id === cartProduct[0]), cartProduct[1]])
 })
 
-const paymentPrice = foundProducts.reduce((acc, product) => acc + +(product[0].price), 0).toLocaleString("pt-br")
+const paymentPrice = ()=> foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br");
 
 // product List
 
@@ -26,13 +26,13 @@ function productListComponent() {
         const priceFormatted = Number(product[0].price).toLocaleString("pt-br")
         return (
             `<li class="product">
-            <section class="allInfos">
-                <img src="${product[0].img}" alt="${product[0].alt}">
-                <div class="infos">
-                    <p>${product[0].title}</p>
-                    <div class="quantity">
-                        <p>R$ ${priceFormatted}</p>
-                        <div class="quantityContainer">
+                <section class="allInfos">
+                    <img src="${product[0].img}" alt="${product[0].alt}">
+                    <div class="infos">
+                        <p>${product[0].title}</p>
+                        <div class="quantity">
+                            <p>R$ ${priceFormatted}</p>
+                            <div class="quantityContainer">
                             <p>Quantidade:</p>
                             <span>${product[1]}</span>
                             <div class="quantityIcons">
@@ -68,6 +68,9 @@ function addToStorage(i) {
 addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         foundProducts[i][1]++;
+        paymentPriceDOM.forEach(payment => {
+            payment.textContent = `R$ ${paymentPrice()}`
+        })
         addToStorage(i)
     })
 })
@@ -76,6 +79,9 @@ substractBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         if (foundProducts[i][1] > 1) {
             foundProducts[i][1]--;
+            paymentPriceDOM.forEach(payment => {
+                payment.textContent = `R$ ${paymentPrice()}`
+            })
             addToStorage(i)
         }
     })
@@ -110,7 +116,7 @@ if (paymentPrice === "0") {
     })
 } else {
     paymentPriceDOM.forEach(payment => {
-        payment.textContent += paymentPrice
+        payment.textContent += paymentPrice()
     })
 }
 
