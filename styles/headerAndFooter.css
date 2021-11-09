@@ -77,6 +77,10 @@ header > h1 > a {
     border-radius: 5px 0 0 5px;
 }
 
+.searchContainer > input::-webkit-search-cancel-button {
+    display: none;
+}
+
 .searchContainer > input:focus {
     outline: 3px solid var(--GREEN_SECONDARY);
 }
