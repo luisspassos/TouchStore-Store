@@ -71,7 +71,7 @@ if (searchUrl) {
 
     const wantedProducts = products.filter(product => product.title.toLowerCase().includes(searchUrl.toLowerCase()))
 
-    if (wantedProducts == 0) {
+    if(wantedProducts == 0) {
         notFoundText.innerHTML += `Nenhum resultado<br> para "<em>${decodeURI(searchUrl)}</em>"`
         notFoundSection.style.display = "flex"
         productListComponent(products)
@@ -91,15 +91,4 @@ imagesPath.forEach((path, i) => {
     clickableImages[i].addEventListener("click", () => {
         location = `product.html?product=${path}`
     })
-})
-$(document).ready(function () {
-
-    $(window).resize(function () {
-        var header = $('#headers').height() + 40;
-        console.log(header)
-        $('main').css({ "padding-top": header })
-    });
-
-    var header = $('#headers').height() + 40;
-    $('main').css({ "padding-top": header })
 })

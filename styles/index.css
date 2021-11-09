@@ -1,5 +1,5 @@
 main {
-    padding: 0px 58px 0 58px;
+    padding: 87px 58px 0 58px;
     font-family: var(--FONT-DEFAULT);
     color: var(--GREEN_PRIMARY);
 }
@@ -186,6 +186,18 @@ main {
 
 .buttonAndPrice > button:hover {
     background: var(--GREEN_QUATERNARY);
+}
+
+@media screen and (max-width: 812px) {
+    main {
+        padding: 118px 58px 0 58px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main {
+        padding: 138px 58px 0 58px;
+    }
 }
 
 @media screen and (max-width: 490px) {
