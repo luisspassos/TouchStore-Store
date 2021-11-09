@@ -10,6 +10,7 @@ if(cartProducts.length === 0) {
     })
 }
 
+console.log(cartQuantityDOM.textContent)
 cartQuantityDOM.textContent = cartProducts.length
 
 export { cartProducts, cartQuantityDOM }
