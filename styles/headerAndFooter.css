@@ -130,6 +130,10 @@ footer > nav > a:hover {
 }
 
 @media screen and (max-width: 550px) {
+    .mainHeader {
+        display: none;
+    }
+
     .phoneHeader {
         display: flex;
         flex-direction: column;
