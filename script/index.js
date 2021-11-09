@@ -45,7 +45,7 @@ function productListComponent(list) {
         const price = Number(product.price).toLocaleString("pt-br")
 
         return (
-            `<article class="product">
+            `<li class="product">
                 <img src="${product.img}" alt="${product.alt}">
                 <section class="productInfos">
                     <p>${product.title}</p>
@@ -54,7 +54,7 @@ function productListComponent(list) {
                         <button>VER PRODUTO</button>
                     </div>
                 </section>
-            </article>`
+            </li>`
         )
     }).join("")
 
