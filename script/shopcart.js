@@ -25,7 +25,7 @@ function productListComponent() {
     productList.innerHTML = foundProducts.map(product => {
         const priceFormatted = Number(product[0].price).toLocaleString("pt-br")
         return (
-            `<article class="product">
+            `<li class="product">
             <section class="allInfos">
                 <img src="${product[0].img}" alt="${product[0].alt}">
                 <div class="infos">
@@ -48,7 +48,7 @@ function productListComponent() {
                 </div>
             </section>
             <div class="line productLine"></div>
-        </article>`
+        </li>`
         )
     }).join("")
 }

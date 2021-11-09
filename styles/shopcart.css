@@ -14,6 +14,10 @@ main {
     flex: 1 0 auto;
 }
 
+.productList {
+    list-style: none;
+}
+
 .allInfos {
     display: flex;
     font-size: 1.4em;
