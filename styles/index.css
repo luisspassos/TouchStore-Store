@@ -66,16 +66,17 @@ main {
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
+    list-style-type: none;
 }
 
-.indexes > div {
+.indexes > li {
     width: 20px;
     height: 20px;
     background: var(--GREEN_TERTIARY_OPACITY);
     border-radius: 50%;
 }
 
-.indexes > div:nth-of-type(1) {
+.indexes > li:nth-of-type(1) {
     background: var(--GREEN_SECONDARY);
 }
 

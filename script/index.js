@@ -6,7 +6,7 @@ const imgsSlider = document.querySelector(".imgsSlider");
 const clickableImages = document.querySelectorAll(".imgsSlider img");
 const imgsSliderLength = document.querySelectorAll(".imgsSlider img").length;
 const productsList = document.querySelector(".products");
-const indexes = document.querySelectorAll(".indexes > div");
+const indexes = document.querySelectorAll(".indexes > li");
 const notFoundSection = document.querySelector(".notFound");
 const notFoundText = document.querySelector(".notFound p");
 
