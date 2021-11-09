@@ -94,9 +94,10 @@ addButtonToCart.addEventListener("click", () => {
     cartProducts.push([id, quantity])
 
     addToStorage()
-    cartQuantityDOM.style.display = "flex";
-    cartQuantityDOM.textContent = cartProducts.length;
-
+    cartQuantityDOM.forEach(quantity => {
+        quantity.style.display = "flex";
+        quantity.textContent = cartProducts.length;
+    })
 })
 
 // ESC modals

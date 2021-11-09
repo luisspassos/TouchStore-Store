@@ -10,8 +10,9 @@ if(cartProducts.length === 0) {
     })
 }
 
-console.log(cartQuantityDOM.textContent)
-cartQuantityDOM.textContent = cartProducts.length
+cartQuantityDOM.forEach(cart => {
+    cart.textContent = cartProducts.length
+})
 
 export { cartProducts, cartQuantityDOM }
 

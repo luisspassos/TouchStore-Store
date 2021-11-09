@@ -89,7 +89,9 @@ function resetCart() {
     paymentPriceDOM.forEach(payment => {
         payment.textContent = "R$ 00,00"
     })
-    cartQuantityDOM.style.display = "none"
+    cartQuantityDOM.forEach(quantity => {
+        quantity.style.display = "none"
+    })
     foundProducts.length = 0;
     localStorage.setItem("test", JSON.stringify(cartProducts))
     productListComponent()
