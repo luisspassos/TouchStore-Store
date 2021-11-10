@@ -9,7 +9,7 @@ body {
 }
 
 main {
-    padding: 76px 20px 20px;
+    padding: 20px;
     color: var(--GREEN_PRIMARY);
     flex: 1 0 auto;
 }
@@ -176,26 +176,23 @@ footer {
     }
 
     .paymentInformation {
-        display: flex;
-        margin: 0;
-        border-radius: 0;
-        width: 100%;
         bottom: auto;
         right: auto;
-        top: 67px;
+        top: 0px;
         left: 0;
-        box-shadow: none;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 15px;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        position: sticky;
+        box-shadow: none;
     }
 
     .paymentInformation > .line {
         display: none;
-    }
-
-    main {
-        padding: 235px 20px 20px;
     }
 
     .moreProducts {
@@ -212,10 +209,6 @@ footer {
 
     .paymentInformation {
         top: 98px;
-    }
-
-    main {
-        padding: 266px 20px 20px;
     }
 }
 
@@ -236,25 +229,11 @@ footer {
         max-width: 82px;
     }
 
-    main {
-        padding: 278px 20px 20px;
-    }
-
 }
 
 @media screen and (max-width: 550px) {
     .paymentInformation {
         top: 118px;
-    }
-
-    main {
-        padding: 298px 20px 20px;
-    }
-}
-
-@media screen and (max-width: 486px) {
-    main {
-        padding: 331px 20px 20px;
     }
 }
 
@@ -268,15 +247,9 @@ footer {
         margin-top: -5px;
     }
 
-    main {
-        padding: 344px 20px 20px;
-    }
 }
 
 @media screen and (max-width: 360px) {
-    main {
-        padding: 316px 20px 20px;
-    }
 
     .paymentInformation {
         font-size: 1.1em;
