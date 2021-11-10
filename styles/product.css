@@ -1,5 +1,5 @@
 main {
-    padding: 86px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     font-family: var(--FONT-DEFAULT);
     color: var(--GREEN_PRIMARY);
 }
@@ -158,15 +158,6 @@ main {
 @media screen and (max-width: 812px) {
     .informationHeader > h1 {
         width: auto;
-    }
-    main {
-        padding: 118px 20px 20px 20px;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    main {
-        padding: 138px 20px 20px 20px;
     }
 }
 
