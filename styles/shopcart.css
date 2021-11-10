@@ -8,6 +8,19 @@ body {
     flex-direction: column;
 }
 
+.paymentAndHeader {
+    position: sticky;
+    top: 0;
+}
+
+header {
+    position: initial;
+}
+
+header > h1 > a {
+    font-size: 35.2px;
+}
+
 main {
     padding: 20px;
     color: var(--GREEN_PRIMARY);
@@ -92,10 +105,10 @@ main {
 }
 
 .paymentInformation {
-    background: var(--GRAY);
     position: fixed;
     right: 0;
     bottom: 0;
+    background: var(--GRAY);
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -177,11 +190,7 @@ footer {
     }
 
     .paymentInformation {
-        position: sticky;
-        bottom: auto;
-        right: auto;
-        top: 0;
-        left: 0;
+        position: static;
         display: flex;
         align-items: center;
         justify-content: space-between;
