@@ -19,7 +19,7 @@ cartProducts.forEach(cartProduct => {
 
 const paymentPrice = ()=> {
     if(foundProducts.length !== 0) {
-        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br");
+        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2});
     }
 }
 
@@ -27,7 +27,7 @@ const paymentPrice = ()=> {
 
 function productListComponent() {
     productList.innerHTML = foundProducts.map(product => {
-        const priceFormatted = Number(product[0].price).toLocaleString("pt-br")
+        const priceFormatted = Number(product[0].price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2})
         return (
             `<li class="product">
                 <section class="allInfos">
