@@ -1,29 +1,6 @@
 import { products } from "./procucts.js"
 // shopCart
 const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
-const main = document.querySelector("main");
-const header = document.querySelectorAll("header");
-
-let headerHeight = header[0].clientHeight;
-main.style.paddingTop = `${headerHeight + 20}px`
-
-setInterval(()=> {
-    if(headerHeight !== header[0].clientHeight) {
-        headerHeight = header[0].clientHeight;
-        main.style.paddingTop = `${headerHeight + 20}px`
-    }
-}, 1)
-
-let headerHeight1 = header[1].clientHeight;
-main.style.paddingTop = `${headerHeight1 + 20}px`
-
-setInterval(()=> {
-    if(headerHeight1 !== header[1].clientHeight) {
-        headerHeight = header[1].clientHeight;
-        main.style.paddingTop = `${headerHeight1 + 20}px`
-    }
-}, 1)
-
 
 let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
 

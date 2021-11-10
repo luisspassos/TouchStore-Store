@@ -2,7 +2,7 @@ import { cartProducts, cartQuantityDOM } from "./header.js";
 import { products } from "./procucts.js";
 
 const productList = document.querySelector(".productList");
-const productLength = document.querySelector("#productLength");
+const productLength = document.querySelectorAll("#productLength");
 const paymentPriceDOM = document.querySelectorAll("#paymentPrice");
 const cleanCartBtn = document.querySelector("#cleanCart");
 const checkoutButton = document.querySelector("#checkout");
@@ -17,7 +17,11 @@ cartProducts.forEach(cartProduct => {
     foundProducts.push([products.find(product => product.id === cartProduct[0]), cartProduct[1]])
 })
 
-const paymentPrice = ()=> foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br");
+const paymentPrice = ()=> {
+    if(foundProducts.length !== 0) {
+        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br");
+    }
+}
 
 // product List
 
@@ -91,7 +95,9 @@ substractBtn.forEach((btn, i) => {
 
 function resetCart() {
     cartProducts.length = 0;
-    productLength.innerHTML = `0<br> produtos`;
+    productLength.forEach(product => {
+        product.innerHTML = `0<br> produtos`;
+    })
     paymentPriceDOM.forEach(payment => {
         payment.textContent = "R$ 00,00"
     })
@@ -108,9 +114,11 @@ function closeBuyModal() {
     modalBackground.style.display = "none";
 }
 
-productLength.innerHTML = `${foundProducts.length}<br> produtos`;
+productLength.forEach(product => {
+    product.innerHTML = `${foundProducts.length}<br> produtos`;
+})
 
-if (paymentPrice === "0") {
+if (paymentPrice() === undefined) {
     paymentPriceDOM.forEach(payment => {
         payment.textContent = "R$ 00,00"
     })
@@ -120,7 +128,14 @@ if (paymentPrice === "0") {
     })
 }
 
-cleanCartBtn.addEventListener('click', resetCart)
+cleanCartBtn.addEventListener('click', ()=> {
+    if(cartProducts.length !== 0) {
+        resetCart()
+    } else {
+        modalBackground.style.display = "block";
+        emptyCartModal.style.display = "block";
+    }
+})
 
 checkoutButton.addEventListener("click", () => {
     if(cartProducts.length !== 0) {
