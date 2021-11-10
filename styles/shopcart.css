@@ -92,8 +92,8 @@ main {
 }
 
 .paymentInformation {
-    position: fixed;
     background: var(--GRAY);
+    position: fixed;
     right: 0;
     bottom: 0;
     margin: 20px;
@@ -101,6 +101,7 @@ main {
     border-radius: 10px;
     box-shadow: var(--SHADOW-PRIMARY);
     font-size: 1.5em;
+    color: var(--GREEN_PRIMARY);
 }
 
 .priceAndQuantityResponsive {
@@ -176,9 +177,10 @@ footer {
     }
 
     .paymentInformation {
+        position: sticky;
         bottom: auto;
         right: auto;
-        top: 0px;
+        top: 0;
         left: 0;
         display: flex;
         align-items: center;
@@ -187,7 +189,6 @@ footer {
         width: 100%;
         margin: 0;
         border-radius: 0;
-        position: sticky;
         box-shadow: none;
     }
 
@@ -202,13 +203,6 @@ footer {
 
     .btnsPayment > button {
         padding: 5px;
-    }
-}
-
-@media screen and (max-width: 812px) { 
-
-    .paymentInformation {
-        top: 98px;
     }
 }
 
@@ -229,12 +223,6 @@ footer {
         max-width: 82px;
     }
 
-}
-
-@media screen and (max-width: 550px) {
-    .paymentInformation {
-        top: 118px;
-    }
 }
 
 @media screen and (max-width: 477px) {
