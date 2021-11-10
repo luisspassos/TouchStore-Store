@@ -3,7 +3,7 @@
 }
 
 header {
-    position: fixed;
+    position: sticky;
     background-color: white;
     display: flex;
     align-items: center;
