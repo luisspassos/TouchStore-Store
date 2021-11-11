@@ -44,13 +44,12 @@ buyBtn.addEventListener("click", () => {
 
 btnBuyModal.addEventListener("click", () => {
     closeBuyModal()
-    console.log('aaaaa')
 })
 
 // add button and add modal
 
 let productQuantity = 1;
-const quantityInCart = cartProducts.find(product => product[0] === id)
+const quantityInCart = cartProducts.find(product => product[0] === id) || 0
 
 function resetModal() {
     productQuantity = 1;
@@ -66,7 +65,7 @@ function addToStorage() {
 
 function closeLimitModal() {
     modalBackground.style.display = "none"
-    limitModal.style.display = "none"
+    limitModal.style.display = "none";
 }
 
 function openLimitModal() {

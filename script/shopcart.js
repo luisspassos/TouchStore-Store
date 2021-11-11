@@ -70,6 +70,7 @@ const subtractBtn = document.querySelectorAll(".subtractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 const removeProductBtns = document.querySelectorAll(".removeProductBtn");
+const productsHTML = document.querySelectorAll(".product")
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
@@ -81,7 +82,11 @@ function addToStorage(i) {
 }
 
 function removeProduct(index) {
-    cartProducts.splice(index, 1);
+    cartProducts.splice(index, 1)
+    foundProducts.length = 0;
+    addFoundProducts()
+    productsHTML[index].parentNode.removeChild(productsHTML[index]);
+
 }
 
 removeProductBtns.forEach((btn, index) => {
