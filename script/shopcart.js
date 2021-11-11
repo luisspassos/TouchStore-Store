@@ -13,9 +13,12 @@ const emptyCartModal = document.querySelector("#emptyCart");
 const emptyModalBtn = document.querySelector("#emptyCart button");
 
 const foundProducts = [];
-cartProducts.forEach(cartProduct => {
-    foundProducts.push([products.find(product => product.id === cartProduct[0]), cartProduct[1]])
-})
+function addFoundProducts() {
+    cartProducts.forEach(cartProduct => {
+        foundProducts.push([products.find(product => product.id === cartProduct[0]), cartProduct[1]])
+    })
+}
+addFoundProducts()
 
 const paymentPrice = ()=> {
     if(foundProducts.length !== 0) {
@@ -46,11 +49,12 @@ function productListComponent() {
                                 <figure class="addBtn">
                                     <img src="assets/plus_circle_dark.svg" alt="Icone de mais">
                                 </figure>
-                                <figure class="substractBtn">
+                                <figure class="subtractBtn">
                                     <img src="assets/subs_circle_dark.svg" class="icon" alt="Icone de menos">
                                 </figure>
                             </div>
                         </div>
+                        <button class="removeProductBtn">Remover</button>
                     </div>
                 </div>
             </section>
@@ -62,9 +66,10 @@ function productListComponent() {
 
 productListComponent()
 
-const substractBtn = document.querySelectorAll(".substractBtn");
+const subtractBtn = document.querySelectorAll(".subtractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
+const removeProductBtns = document.querySelectorAll(".removeProductBtn");
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
@@ -74,6 +79,16 @@ function addToStorage(i) {
     }
     productQuantity[i].textContent = foundProducts[i][1];
 }
+
+function removeProduct(index) {
+    cartProducts.splice(index, 1);
+}
+
+removeProductBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        removeProduct(index);
+    })
+})
 
 addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
@@ -87,7 +102,7 @@ addBtn.forEach((btn, i) => {
     })
 })
 
-substractBtn.forEach((btn, i) => {
+subtractBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         if (foundProducts[i][1] > 1) {
             foundProducts[i][1]--;

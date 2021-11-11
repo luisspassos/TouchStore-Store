@@ -62,7 +62,8 @@ main {
 }
 
 .quantity > p:nth-child(1) {
-    padding-right: 25px;
+    margin-right: 25px;
+    width: 132.67px;
 }
 
 .quantityIcons {
@@ -85,6 +86,20 @@ main {
 
 .quantityIcons > figure > img {
     width: 24px;
+}
+
+.removeProductBtn {
+    color: white;
+    background: var(--GREEN_SECONDARY);
+    border: 0;
+    font: bold .8em var(--FONT-DEFAULT);
+    padding: 3px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.removeProductBtn:hover {
+    background: var(--GREEN_QUATERNARY);
 }
 
 .line {
@@ -248,6 +263,7 @@ footer {
     .quantity {
         flex-direction: column;
         align-items: flex-start;
+        text-align: center;
     }
 
     .quantityContainer {
