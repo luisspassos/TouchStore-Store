@@ -234,6 +234,16 @@ footer {
 
 }
 
+@media screen and (max-width: 550px) {
+    .paymentAndHeader > header:nth-of-type(1) {
+        display: none;
+    }
+
+    .phoneHeader > section > h1 > a {
+        font-size: 31.2px;
+    }
+}
+
 @media screen and (max-width: 477px) {
     .quantity {
         flex-direction: column;

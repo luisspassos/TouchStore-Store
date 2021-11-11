@@ -42,7 +42,7 @@ const searchUrl = location.search.split("=")[1];
 function productListComponent(list) {
     productsList.innerHTML = list.map(product => {
 
-        const price = Number(product.price).toLocaleString("pt-br")
+        const price = Number(product.price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2})
 
         return (
             `<li class="product">

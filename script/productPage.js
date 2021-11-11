@@ -19,7 +19,7 @@ const addButtonToCart = document.querySelector("#addButtonToCart");
 const urlProduct = location.search.split("=")[1];
 
 const {img, title, alt, price, id} = products.find(product => product.id === urlProduct);
-const priceFormatted = Number(price).toLocaleString("pt-br");
+const priceFormatted = Number(price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2});
 
 // view product
 
