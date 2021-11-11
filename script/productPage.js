@@ -15,6 +15,8 @@ const modalCartQuantity = document.querySelector(".quantityAddModal > span")
 const modalAddButton = document.querySelector("#modalAddButton");
 const modalSubsButton = document.querySelector("#modalSubsButton");
 const addButtonToCart = document.querySelector("#addButtonToCart");
+const limitModal = document.querySelector("#limitModal");
+const limitModalBtn = document.querySelector("#limitModal > button")
 
 const urlProduct = location.search.split("=")[1];
 
@@ -42,11 +44,13 @@ buyBtn.addEventListener("click", () => {
 
 btnBuyModal.addEventListener("click", () => {
     closeBuyModal()
+    console.log('aaaaa')
 })
 
 // add button and add modal
 
 let productQuantity = 1;
+const quantityInCart = cartProducts.find(product => product[0] === id)
 
 function resetModal() {
     productQuantity = 1;
@@ -60,9 +64,23 @@ function addToStorage() {
     localStorage.setItem("test", JSON.stringify(cartProducts))
 }
 
-addBtn.addEventListener("click", () => {
-    addModal.style.display = "flex";
+function closeLimitModal() {
+    modalBackground.style.display = "none"
+    limitModal.style.display = "none"
+}
+
+function openLimitModal() {
     modalBackground.style.display = "block"
+    limitModal.style.display = "block"
+}
+
+addBtn.addEventListener("click", () => {
+    if(quantityInCart[1] >= 99) {
+        openLimitModal()
+        return;
+    }
+        addModal.style.display = "flex";
+        modalBackground.style.display = "block"
 })
 
 modalCancelBtn.addEventListener("click", () => {
@@ -85,16 +103,15 @@ modalSubsButton.addEventListener("click", () => {
 
 addButtonToCart.addEventListener("click", () => {
     const quantity = +(modalCartQuantity.textContent);
-    const productQuantity = cartProducts.find(product => product[0] === id)
 
-    if(productQuantity) {
-        const sumOfQuantities = productQuantity[1] + quantity;
+    if(quantityInCart) {
+        const sumOfQuantities = quantityInCart[1] + quantity;
         if(sumOfQuantities >= 100) {
-            productQuantity[1] = 99;
+            quantityInCart[1] = 99;
             addToStorage()
             return;
         }
-        productQuantity[1] += quantity
+        quantityInCart[1] += quantity
         addToStorage()
         return;
     }
@@ -108,11 +125,16 @@ addButtonToCart.addEventListener("click", () => {
     })
 })
 
+limitModalBtn.addEventListener("click", () => {
+    closeLimitModal()
+})
+
 // ESC modals
 
 document.addEventListener("keydown", (e) => {
     if(e.key === "Escape") {
         closeBuyModal()
         resetModal()
+        closeLimitModal()
     }
 })
