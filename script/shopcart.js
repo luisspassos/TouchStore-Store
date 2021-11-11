@@ -28,6 +28,9 @@ const paymentPrice = ()=> {
 function productListComponent() {
     productList.innerHTML = foundProducts.map(product => {
         const priceFormatted = Number(product[0].price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2})
+        if(product[1] < 10) {
+            product[1] = `0${product[1]}`
+        }
         return (
             `<li class="product">
                 <section class="allInfos">
@@ -64,9 +67,12 @@ const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 
 function addToStorage(i) {
-    productQuantity[i].textContent = foundProducts[i][1];
     cartProducts[i][1] = foundProducts[i][1];
     localStorage.setItem("test", JSON.stringify(cartProducts))
+    if (foundProducts[i][1] < 10) {
+        foundProducts[i][1] = `0${foundProducts[i][1]}`
+    }
+    productQuantity[i].textContent = foundProducts[i][1];
 }
 
 addBtn.forEach((btn, i) => {
