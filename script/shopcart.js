@@ -77,11 +77,13 @@ function addToStorage(i) {
 
 addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
-        foundProducts[i][1]++;
-        paymentPriceDOM.forEach(payment => {
-            payment.textContent = `R$ ${paymentPrice()}`
-        })
-        addToStorage(i)
+        if(foundProducts[i][1] < 99) {
+            foundProducts[i][1]++;
+            paymentPriceDOM.forEach(payment => {
+                payment.textContent = `R$ ${paymentPrice()}`
+            })
+            addToStorage(i)
+        }
     })
 })
 
