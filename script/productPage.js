@@ -70,8 +70,10 @@ modalCancelBtn.addEventListener("click", () => {
 })
 
 modalAddButton.addEventListener("click", () => {
-    productQuantity++;
-    modalCartQuantity.textContent = productQuantity;
+    if(productQuantity < 99) {
+        productQuantity++;
+        modalCartQuantity.textContent = productQuantity;
+    }
 })
 
 modalSubsButton.addEventListener("click", () => {
@@ -86,6 +88,12 @@ addButtonToCart.addEventListener("click", () => {
     const productQuantity = cartProducts.find(product => product[0] === id)
 
     if(productQuantity) {
+        const sumOfQuantities = productQuantity[1] + quantity;
+        if(sumOfQuantities >= 100) {
+            productQuantity[1] = 99;
+            addToStorage()
+            return;
+        }
         productQuantity[1] += quantity
         addToStorage()
         return;
