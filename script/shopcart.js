@@ -70,6 +70,7 @@ const subtractBtn = document.querySelectorAll(".subtractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 const removeProductBtns = document.querySelectorAll(".removeProductBtn");
+const HTMLproducts = document.querySelectorAll(".product");
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
@@ -81,14 +82,19 @@ function addToStorage(i) {
 }
 
 function removeProduct(index) {
-    cartProducts.splice(index, 1);
     cartQuantityDOM.forEach(quantity => {
-        if(cartProducts.length === 0) {
+        if(quantity.textContent - 1 == 0) {
             quantity.style.display = 'none';
         } else {
-            quantity.textContent = cartProducts.length
+            quantity.textContent = quantity.textContent - 1;
         }
     })
+    HTMLproducts[index].style.display = 'none';
+    productLength.forEach(product => {
+        const quantity = product.textContent.charAt(0) - 1;
+        product.innerHTML = `${quantity}<br> produtos`;
+    })
+    
 }
 
 removeProductBtns.forEach((btn, index) => {
