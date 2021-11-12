@@ -20,9 +20,11 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
-const paymentPrice = ()=> {
-    if(foundProducts.length !== 0) {
-        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2});
+const paymentPriceNumber = foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product);
+
+const paymentPrice = () => {
+    if (foundProducts.length !== 0) {
+        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
     }
 }
 
@@ -30,8 +32,8 @@ const paymentPrice = ()=> {
 
 function productListComponent() {
     productList.innerHTML = foundProducts.map(product => {
-        const priceFormatted = Number(product[0].price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2})
-        if(product[1] < 10) {
+        const priceFormatted = Number(product[0].price).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 })
+        if (product[1] < 10) {
             product[1] = `0${product[1]}`
         }
         return (
@@ -81,9 +83,11 @@ function addToStorage(i) {
     productQuantity[i].textContent = foundProducts[i][1];
 }
 
+const productsPrice = [];
+
 function removeProduct(index) {
     cartQuantityDOM.forEach(quantity => {
-        if(quantity.textContent - 1 == 0) {
+        if (quantity.textContent - 1 == 0) {
             quantity.style.display = 'none';
         } else {
             quantity.textContent = quantity.textContent - 1;
@@ -94,7 +98,14 @@ function removeProduct(index) {
         const quantity = product.textContent.charAt(0) - 1;
         product.innerHTML = `${quantity}<br> produtos`;
     })
-    
+    const productPrice = foundProducts[index][0].price * foundProducts[index][1];
+    productsPrice.push(productPrice)
+    const totalPrice = productsPrice.reduce((acc, price) => acc + price, 0)
+    const paymentText = `R$ ${(paymentPriceNumber - totalPrice).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 })}`
+
+    paymentPriceDOM.forEach(payment => {
+        payment.textContent = paymentText
+    })
 }
 
 removeProductBtns.forEach((btn, index) => {
@@ -105,7 +116,7 @@ removeProductBtns.forEach((btn, index) => {
 
 addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
-        if(foundProducts[i][1] < 99) {
+        if (foundProducts[i][1] < 99) {
             foundProducts[i][1]++;
             paymentPriceDOM.forEach(payment => {
                 payment.textContent = `R$ ${paymentPrice()}`
@@ -164,8 +175,8 @@ if (paymentPrice() === undefined) {
     })
 }
 
-cleanCartBtn.addEventListener('click', ()=> {
-    if(cartProducts.length !== 0) {
+cleanCartBtn.addEventListener('click', () => {
+    if (cartProducts.length !== 0) {
         resetCart()
     } else {
         modalBackground.style.display = "block";
@@ -174,7 +185,7 @@ cleanCartBtn.addEventListener('click', ()=> {
 })
 
 checkoutButton.addEventListener("click", () => {
-    if(cartProducts.length !== 0) {
+    if (cartProducts.length !== 0) {
         resetCart()
         buyModal.style.display = "block";
         modalBackground.style.display = "block";
