@@ -12,7 +12,7 @@ const btnBuyModal = document.querySelector(".buyModal button");
 const emptyCartModal = document.querySelector("#emptyCart");
 const emptyModalBtn = document.querySelector("#emptyCart button");
 
-let foundProducts = [];
+const foundProducts = [];
 function addFoundProducts() {
     cartProducts.forEach(cartProduct => {
         foundProducts.push([products.find(product => product.id === cartProduct[0]), cartProduct[1]])
@@ -20,9 +20,9 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
-const paymentPrice = () => {
-    if (foundProducts.length !== 0) {
-        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+const paymentPrice = ()=> {
+    if(foundProducts.length !== 0) {
+        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2});
     }
 }
 
@@ -30,8 +30,8 @@ const paymentPrice = () => {
 
 function productListComponent() {
     productList.innerHTML = foundProducts.map(product => {
-        const priceFormatted = Number(product[0].price).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 })
-        if (product[1] < 10) {
+        const priceFormatted = Number(product[0].price).toLocaleString("pt-br", {maximumFractionDigits: 2, minimumFractionDigits: 2})
+        if(product[1] < 10) {
             product[1] = `0${product[1]}`
         }
         return (
@@ -70,7 +70,6 @@ const subtractBtn = document.querySelectorAll(".subtractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 const removeProductBtns = document.querySelectorAll(".removeProductBtn");
-const HTMLproducts = document.querySelectorAll(".product");
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
@@ -83,9 +82,13 @@ function addToStorage(i) {
 
 function removeProduct(index) {
     cartProducts.splice(index, 1);
-    foundProducts = [];
-    addFoundProducts()
-    HTMLproducts[index].parentNode.removeChild(HTMLproducts[index])
+    cartQuantityDOM.forEach(quantity => {
+        if(cartProducts.length === 0) {
+            quantity.style.display = 'none';
+        } else {
+            quantity.textContent = cartProducts.length
+        }
+    })
 }
 
 removeProductBtns.forEach((btn, index) => {
@@ -94,16 +97,15 @@ removeProductBtns.forEach((btn, index) => {
     })
 })
 
-foundProducts.forEach((product, index) => {
-    addBtn[index].addEventListener("click", () => {
-        if (product[1] < 99) {
-            product[1]++;
+addBtn.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        if(foundProducts[i][1] < 99) {
+            foundProducts[i][1]++;
             paymentPriceDOM.forEach(payment => {
                 payment.textContent = `R$ ${paymentPrice()}`
             })
+            addToStorage(i)
         }
-
-        console.log(product[1])
     })
 })
 
@@ -156,8 +158,8 @@ if (paymentPrice() === undefined) {
     })
 }
 
-cleanCartBtn.addEventListener('click', () => {
-    if (cartProducts.length !== 0) {
+cleanCartBtn.addEventListener('click', ()=> {
+    if(cartProducts.length !== 0) {
         resetCart()
     } else {
         modalBackground.style.display = "block";
@@ -166,7 +168,7 @@ cleanCartBtn.addEventListener('click', () => {
 })
 
 checkoutButton.addEventListener("click", () => {
-    if (cartProducts.length !== 0) {
+    if(cartProducts.length !== 0) {
         resetCart()
         buyModal.style.display = "block";
         modalBackground.style.display = "block";
