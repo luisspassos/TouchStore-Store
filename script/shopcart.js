@@ -20,9 +20,13 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
+const paymentPriceNumber = () => foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product)
+
+let paymentPriceTotal = paymentPriceNumber();
+
 const paymentPrice = () => {
     if (foundProducts.length !== 0) {
-        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product).toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+        return paymentPriceNumber().toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
     }
 }
 
@@ -70,6 +74,7 @@ const subtractBtn = document.querySelectorAll(".subtractBtn");
 const addBtn = document.querySelectorAll(".addBtn");
 const productQuantity = document.querySelectorAll(".quantityContainer > span");
 const removeProductBtns = document.querySelectorAll(".removeProductBtn");
+const HTMLproducts = document.querySelectorAll(".product");
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
@@ -80,19 +85,44 @@ function addToStorage(i) {
     productQuantity[i].textContent = foundProducts[i][1];
 }
 
+const pricesRemoved = [];
+
+function sumOfRemovedPrices() {
+    return pricesRemoved.reduce((acc, price) => acc + price, 0)
+}
+
 function removeProduct(index) {
-    cartProducts.splice(index, 1);
-    cartQuantityDOM.forEach(cart => {
-        if(cartProducts.length === 0) {
-            cart.style.display = 'none';
+    cartQuantityDOM.forEach(quantity => {
+
+        const quantityIsZero = quantity.textContent - 1 === 0
+
+        if(quantityIsZero) {
+            quantity.style.display = "none";
         } else {
-            cart.textContent = cartProducts.length
+            quantity.textContent = quantity.textContent - 1
+        }
+
+    })
+
+    HTMLproducts[index].parentNode.removeChild(HTMLproducts[index]);
+    productLength.forEach(product => {
+        const quantity = product.textContent.charAt(0) - 1;
+        product.innerHTML = `${quantity}<br> produtos`;
+    })
+    pricesRemoved.push(foundProducts[index][0].price * foundProducts[index][1]);
+    paymentPriceTotal -= foundProducts[index][0].price * foundProducts[index][1];
+    paymentPriceDOM.forEach(payment => {
+        const totalPrice = (paymentPriceNumber() - sumOfRemovedPrices())
+        if(totalPrice === 0) {
+            payment.textContent = `R$ 00,00`
+        } else {
+            payment.textContent = `R$ ${paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2})}`
         }
     })
 }
 
 removeProductBtns.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", ()=> {
         removeProduct(index);
     })
 })
@@ -101,8 +131,9 @@ addBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         if (foundProducts[i][1] < 99) {
             foundProducts[i][1]++;
+            paymentPriceTotal += +(foundProducts[i][0].price)
             paymentPriceDOM.forEach(payment => {
-                payment.textContent = `R$ ${paymentPrice()}`
+                payment.textContent = `R$ ${paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 })}`
             })
             addToStorage(i)
         }
@@ -113,8 +144,9 @@ subtractBtn.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         if (foundProducts[i][1] > 1) {
             foundProducts[i][1]--;
+            paymentPriceTotal -= foundProducts[i][0].price
             paymentPriceDOM.forEach(payment => {
-                payment.textContent = `R$ ${paymentPrice()}`
+                payment.textContent = `R$ ${paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 })}`
             })
             addToStorage(i)
         }
