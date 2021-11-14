@@ -20,19 +20,9 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
-const paymentPriceNumber = () => {
-    if(foundProducts.length !== 0) {
-        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product) 
-    }
-} 
+let paymentPriceTotal = foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product) || 0;
 
-let paymentPriceTotal = paymentPriceNumber();
-
-const paymentPrice = () => {
-    if (foundProducts.length !== 0) {
-        return paymentPriceNumber().toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-    }
-}
+const paymentPrice = paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
 
 // product List
 
@@ -89,16 +79,12 @@ function addToStorage(i) {
     productQuantity[i].textContent = foundProducts[i][1];
 }
 
-const pricesRemoved = [];
 const removedProducts = [];
-
-function sumOfRemovedPrices() {
-    return pricesRemoved.reduce((acc, price) => acc + price, 0)
-}
+console.log(JSON.parse(localStorage.getItem("MUDARISSO")))
 
 function removeProduct(index) {
     removedProducts.push(index);
-    console.log(removedProducts)
+    localStorage.setItem("MUDARISSO", JSON.stringify(removedProducts))
     cartQuantityDOM.forEach(quantity => {
 
         const quantityIsZero = quantity.textContent - 1 === 0
@@ -112,18 +98,20 @@ function removeProduct(index) {
     })
 
     HTMLproducts[index].parentNode.removeChild(HTMLproducts[index]);
+
     productLength.forEach(product => {
         const quantity = product.textContent.charAt(0) - 1;
         product.innerHTML = `${quantity}<br> produtos`;
     })
-    pricesRemoved.push(foundProducts[index][0].price * foundProducts[index][1]);
-    paymentPriceTotal -= foundProducts[index][0].price * foundProducts[index][1];
+    const productPrice = +(foundProducts[index][0].price) * +(foundProducts[index][1]);
+    paymentPriceTotal -= productPrice;
+    const paymentPriceTotalPtBr = paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2});
+
     paymentPriceDOM.forEach(payment => {
-        const totalPrice = (paymentPriceNumber() - sumOfRemovedPrices())
-        if(totalPrice === 0) {
+        if(paymentPriceTotalPtBr === "0,00") {
             payment.textContent = `R$ 00,00`
         } else {
-            payment.textContent = `R$ ${paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2})}`
+            payment.textContent = `R$ ${paymentPriceTotalPtBr}`
         }
     })
 }
@@ -187,13 +175,13 @@ productLength.forEach(product => {
     product.innerHTML = `${foundProducts.length}<br> produtos`;
 })
 
-if (paymentPrice() === undefined) {
+if (paymentPrice === undefined) {
     paymentPriceDOM.forEach(payment => {
         payment.textContent = "R$ 00,00"
     })
 } else {
     paymentPriceDOM.forEach(payment => {
-        payment.textContent += paymentPrice()
+        payment.textContent += paymentPrice
     })
 }
 
