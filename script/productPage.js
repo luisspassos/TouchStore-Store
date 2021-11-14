@@ -60,7 +60,7 @@ function resetModal() {
 
 function addToStorage() {
     resetModal()
-    localStorage.setItem("test", JSON.stringify(cartProducts))
+    localStorage.setItem("@@cartProducts", JSON.stringify(cartProducts))
 }
 
 function closeLimitModal() {

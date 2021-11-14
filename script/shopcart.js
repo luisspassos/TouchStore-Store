@@ -72,7 +72,7 @@ const HTMLproducts = document.querySelectorAll(".product");
 
 function addToStorage(i) {
     cartProducts[i][1] = foundProducts[i][1];
-    localStorage.setItem("test", JSON.stringify(cartProducts))
+    localStorage.setItem("@@cartProducts", JSON.stringify(cartProducts))
     if (foundProducts[i][1] < 10) {
         foundProducts[i][1] = `0${foundProducts[i][1]}`
     }
@@ -81,7 +81,7 @@ function addToStorage(i) {
 
 function removeProduct(index) {
     removedProducts.push(index);
-    localStorage.setItem("MUDARISSO6", JSON.stringify(removedProducts))
+    localStorage.setItem("@@removedProducts", JSON.stringify(removedProducts))
     cartQuantityDOM.forEach(quantity => {
 
         const quantityIsZero = quantity.textContent - 1 === 0
@@ -105,7 +105,7 @@ function removeProduct(index) {
     const paymentPriceTotalPtBr = paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2});
 
     paymentPriceDOM.forEach(payment => {
-        if(paymentPriceTotalPtBr === "0,00") {
+        if(paymentPriceTotalPtBr === "0,00" || paymentPriceTotalPtBr === "-0,00") {
             payment.textContent = `R$ 00,00`
         } else {
             payment.textContent = `R$ ${paymentPriceTotalPtBr}`
@@ -159,7 +159,7 @@ function resetCart() {
         quantity.style.display = "none"
     })
     foundProducts.length = 0;
-    localStorage.setItem("test", JSON.stringify(cartProducts))
+    localStorage.setItem("@@cartProducts", JSON.stringify(cartProducts))
     productListComponent()
 }
 

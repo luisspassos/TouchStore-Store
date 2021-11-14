@@ -1,14 +1,12 @@
 // shopCart
 const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
 
-const removedProducts = JSON.parse(localStorage.getItem("MUDARISSO6")) || [];
-let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
+const removedProducts = JSON.parse(localStorage.getItem("@@removedProducts")) || [];
+let cartProducts = JSON.parse(localStorage.getItem("@@cartProducts")) || [];
 
 cartProducts = cartProducts.filter((_,index)=> !removedProducts.includes(index));
-localStorage.setItem("test", JSON.stringify(cartProducts));
-localStorage.setItem("MUDARISSO6", null);
-
-// ver isso direito
+localStorage.setItem("@@cartProducts", JSON.stringify(cartProducts));
+localStorage.setItem("@@removedProducts", null);
 
 if(cartProducts.length !== 0) {
     cartQuantityDOM.forEach(cartQuatity => {

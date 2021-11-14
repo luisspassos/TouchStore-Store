@@ -7,7 +7,7 @@ export const products = [
         alt: "iPhone 11"
     },
     {
-        title: 'Smart TV LED 32" Philco PTV32G52S HD e Áudio Dolby Conversor Digital Integrado',
+        title: 'Smart TV LED 32" Philco PTV32G52S HD e Áudio Dolby Conversor Digital',
         price: "1329.99",
         img: "https://images-americanas.b2w.io/produtos/01/00/img/1322119/4/1322119477_1SZ.jpg",
         id: "Smart_TV",
@@ -28,7 +28,7 @@ export const products = [
         alt: "Monitor"
     },
     {
-        title: "Mouse Gamer Logitech G203 LIGHTSYNC RGB Efeito de Ondas de Cores 6 Botões Programáveis ",
+        title: "Mouse Gamer Logitech G203 LIGHTSYNC RGB Efeito de Ondas de Cores",
         price: "126.95",
         img: "https://images-americanas.b2w.io/produtos/01/00/img/1720328/9/1720328928_1SZ.jpg",
         id: "Mouse_Gamer",
