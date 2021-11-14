@@ -2,12 +2,17 @@ import { products } from "./procucts.js"
 // shopCart
 const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
 
-const removedProducts = JSON.parse(localStorage.getItem("MUDARISSO3")) || [];
+const removedProducts = JSON.parse(localStorage.getItem("MUDARISSO6")) || [];
 let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
 
-cartProducts = cartProducts.filter((_,index)=> index !== removedProducts[index])
-localStorage.setItem("test", JSON.stringify(cartProducts))
-localStorage.setItem("MUDARISSO3", JSON.stringify([]))
+console.log(removedProducts)
+console.log(cartProducts)
+
+cartProducts = cartProducts.filter((_,index)=> !removedProducts.includes(index));
+localStorage.setItem("test", JSON.stringify(cartProducts));
+localStorage.setItem("MUDARISSO6", null);
+
+console.log(cartProducts)
 
 // ver isso direito
 

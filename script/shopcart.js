@@ -81,7 +81,7 @@ function addToStorage(i) {
 
 function removeProduct(index) {
     removedProducts.push(index);
-    localStorage.setItem("MUDARISSO3", JSON.stringify(removedProducts))
+    localStorage.setItem("MUDARISSO6", JSON.stringify(removedProducts))
     cartQuantityDOM.forEach(quantity => {
 
         const quantityIsZero = quantity.textContent - 1 === 0
