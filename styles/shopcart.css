@@ -189,7 +189,7 @@ footer {
     flex-shrink: 0;
 }
 
-@media screen and (max-width: 1265px) {
+@media screen and (max-width: 1280px) {
     .allInfos {
         flex-direction: column;
     }

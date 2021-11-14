@@ -1,5 +1,4 @@
 import { products } from "./procucts.js"
-import { } from "./header.js";
 
 const btnsSlider = document.querySelectorAll(".slider button");
 const imgsSlider = document.querySelector(".imgsSlider");
