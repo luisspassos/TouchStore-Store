@@ -20,7 +20,11 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
-const paymentPriceNumber = () => foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product)
+const paymentPriceNumber = () => {
+    if(foundProducts.length !== 0) {
+        return foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product) 
+    }
+} 
 
 let paymentPriceTotal = paymentPriceNumber();
 
@@ -86,12 +90,15 @@ function addToStorage(i) {
 }
 
 const pricesRemoved = [];
+const removedProducts = [];
 
 function sumOfRemovedPrices() {
     return pricesRemoved.reduce((acc, price) => acc + price, 0)
 }
 
 function removeProduct(index) {
+    removedProducts.push(index);
+    console.log(removedProducts)
     cartQuantityDOM.forEach(quantity => {
 
         const quantityIsZero = quantity.textContent - 1 === 0
