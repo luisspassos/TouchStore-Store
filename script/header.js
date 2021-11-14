@@ -2,7 +2,14 @@ import { products } from "./procucts.js"
 // shopCart
 const cartQuantityDOM = document.querySelectorAll(".cartQuantity");
 
+const removedProducts = JSON.parse(localStorage.getItem("MUDARISSO3")) || [];
 let cartProducts = JSON.parse(localStorage.getItem("test")) || [];
+
+cartProducts = cartProducts.filter((_,index)=> index !== removedProducts[index])
+localStorage.setItem("test", JSON.stringify(cartProducts))
+localStorage.setItem("MUDARISSO3", JSON.stringify([]))
+
+// ver isso direito
 
 if(cartProducts.length !== 0) {
     cartQuantityDOM.forEach(cartQuatity => {
@@ -14,7 +21,7 @@ cartQuantityDOM.forEach(cart => {
     cart.textContent = cartProducts.length
 })
 
-export { cartProducts, cartQuantityDOM }
+export { cartProducts, cartQuantityDOM, removedProducts }
 
 // search
 

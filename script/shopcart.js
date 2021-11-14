@@ -1,4 +1,4 @@
-import { cartProducts, cartQuantityDOM } from "./header.js";
+import { cartProducts, cartQuantityDOM, removedProducts } from "./header.js";
 import { products } from "./procucts.js";
 
 const productList = document.querySelector(".productList");
@@ -20,7 +20,7 @@ function addFoundProducts() {
 }
 addFoundProducts()
 
-let paymentPriceTotal = foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product) || 0;
+let paymentPriceTotal = foundProducts.map(product => Number(product[0].price) * product[1]).reduce((acc, product) => acc + product, 0) || 0;
 
 const paymentPrice = paymentPriceTotal.toLocaleString("pt-br", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
 
@@ -79,12 +79,9 @@ function addToStorage(i) {
     productQuantity[i].textContent = foundProducts[i][1];
 }
 
-const removedProducts = [];
-console.log(JSON.parse(localStorage.getItem("MUDARISSO")))
-
 function removeProduct(index) {
     removedProducts.push(index);
-    localStorage.setItem("MUDARISSO", JSON.stringify(removedProducts))
+    localStorage.setItem("MUDARISSO3", JSON.stringify(removedProducts))
     cartQuantityDOM.forEach(quantity => {
 
         const quantityIsZero = quantity.textContent - 1 === 0
@@ -175,7 +172,7 @@ productLength.forEach(product => {
     product.innerHTML = `${foundProducts.length}<br> produtos`;
 })
 
-if (paymentPrice === undefined) {
+if (paymentPrice === "0,00") {
     paymentPriceDOM.forEach(payment => {
         payment.textContent = "R$ 00,00"
     })
